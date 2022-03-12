@@ -1,0 +1,121 @@
+#description-review {
+    margin-top: 30px;
+    #pills-tab {
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #A4A4A4;
+
+        li {
+
+            button {
+                font-size: 19.992px;
+                color: #A4A4A4;
+                font-family: 'Rubik', sans-serif;
+                font-weight: 600;
+            }
+
+            .active {
+                background-color: transparent;
+                border-bottom: 3px solid #0363CD;
+                color: #242424;
+                border-radius: 0px;
+            }
+        }
+    }
+
+    .desc {
+        p {
+            font-family: 'Rubik', sans-serif;
+            color: #A4A4A4;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 30px;
+        }
+    }
+
+    .comment {
+        .user-comment {
+            border: 1px solid #A4A4A4;
+            margin-left: 15px;
+            padding: 15px;
+            width: 30%;
+
+
+
+            h3 {
+                font-size: 16px;
+                color: #767676;
+                font-family: 'Rubik', sans-serif;
+
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            .stars {
+                span {
+                    i {
+                        font-size: 18px;
+                        color: #0363CD;
+
+                    }
+                }
+            }
+
+            .comment-text {
+                p {
+                    font-family: 'Rubik', sans-serif;
+                    color: #767676;
+                }
+
+            }
+        }
+    }
+
+    .respond {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        p {
+            font-size: 14px;
+            font-family: 'Rubik', sans-serif;
+            color: #757575;
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+
+        }
+
+        .rating {
+            display: inline-block;
+          }
+          
+          .star {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            padding: 0 0.15em;
+            cursor: pointer;
+          }
+          
+          .star.is-active {
+            color: #F9DC5C;
+          }
+          
+          .screen-reader {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+          }
+    }
+}

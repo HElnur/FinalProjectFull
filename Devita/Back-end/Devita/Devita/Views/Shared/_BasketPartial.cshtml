@@ -1,0 +1,53 @@
+﻿@model BasketViewModel
+
+<div class="col-lg-2 col-md-12 d-flex align-items-center justify-content-lg-start justify-content-center">
+    <div class="order position-relative">
+        <a asp-controller="Order" asp-action="checkout" class="order-text position-relative">
+            <i class='bx bxs-shopping-bag-alt'></i>$@Model.TotalAmount.ToString("#.00") <i class="ps-1 fa-solid fa-angle-down"></i>
+            <span class="order-badge position-absolute py-1 px-2 top-0 translate-middle rounded-circle">
+                <span class="visually count">@(Model.BasketItems?.Count()??0)</span>
+            </span>
+        </a>
+
+        <div class="shopping-cart position-absolute">
+            <div class="shopping-cart-header">
+                <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+                <div class="shopping-cart-total">
+                    <span class="lighter-text">Total:</span>
+                    @*<span class="main-color-text sale-price">$@(Model?.TotalAmount!=null?(Model.TotalAmount.ToString("0.00")):("0"))</span>*@
+                    <span class="main-color-text sale-price">$@Model?.TotalAmount.ToString("#.00")</span>
+                </div>
+            </div>
+            <!--end shopping-cart-header -->
+
+            <ul class="shopping-cart-items" id="shopping-cart-items">
+                @if (Model != null)
+                {
+                    foreach (var item in Model.BasketItems)
+                    {
+                        <li class="clearfix d-flex">
+                            <img width="20%" height="20%" src="~/assets/image/@item.PosterImage"
+                                 alt="item1" />
+                            <div class="price-prdname p-3">
+                                <span class="item-name">@item.Name</span>
+                                <span class="item-price">$@(item.Price.ToString("#.00"))</span>
+                                <span class="item-quantity">Quantity: @item.Count</span>
+                            </div>
+                        </li>
+                    }
+                }
+
+
+
+
+
+            </ul>
+
+            <a asp-controller="Order" asp-action="checkout" class="button">Checkout</a>
+        </div>
+        <!--end shopping-cart -->
+        <!--end container -->
+
+
+    </div>
+</div>

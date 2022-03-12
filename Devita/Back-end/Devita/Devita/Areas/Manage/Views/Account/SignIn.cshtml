@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "SignIn";
+}
+@model AdminSignInViewModel
+
+<div id="sign-in">
+    <div class="wrapper">
+        <div class="container p-0">
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Welcome Back</h2>
+                    <p>Create your account.<br>It's totally free.</p>
+                    <a class="btn" asp-controller="Account" asp-action="Register">Register</a>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="login-form">
+                    <h2>Sign in</h2>
+                    <form asp-action="SignIn" method="post">
+                        <p>
+                            <label>Username<span>*</span></label>
+                            <input type="text" asp-for="UserName" placeholder="Username" required>
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </p>
+                        <p>
+                            <label>Password<span>*</span></label>
+                            <input type="password" asp-for="Password" placeholder="Password" required>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+
+                        </p>
+                        <p>
+                            <button type="submit" value="Sing In">Sign in</button>
+                        </p>
+                        <p>
+                            <a asp-controller="account" asp-action="Forgot">Forgot Password?</a>
+                        </p>
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,54 @@
+﻿@model MemberUpdateViewModel;
+<section id="profile">
+    <div class="container">
+        <div class="row">
+            <div class="profile">
+                <div class="title">
+                    <h3><i class="fas fa-address-card pe-3"></i>Profile</h3>
+                </div>
+
+                <div class="content">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 d-flex justify-content-center">
+                                <div class="username-email">
+                                    <div class="username  my-3">
+                                        <label for="username" class="d-flex">
+                                            <i class="fas fa-user pe-2"></i>Username:
+                                        </label>
+                                        <input type="text" asp-for="UserName" id="username" placeholder="Username" disabled>
+                                    </div>
+
+                                    <div class="email  my-3">
+                                        <label for="email" class="d-flex">
+                                            <i class="fas fa-envelope pe-2"></i>E-mail:
+                                        </label>
+                                        <input type="email" asp-for="Email" id="email" placeholder="E-mail address">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 d-flex justify-content-center">
+                                <div class="phone-address">
+                                    <div class="phone  my-3">
+                                        <label for="phone" class="d-flex">
+                                            <i class="fas fa-phone pe-2"></i>Phone:
+                                        </label>
+                                        <input type="text" id="phone" placeholder="Phone">
+                                    </div>
+
+                                    <div class="address  my-3">
+                                        <label for="address" class="d-flex">
+                                            <i class="fas fa-address-book pe-2"></i>Address:
+                                        </label>
+                                        <input type="text" id="address" placeholder="Address">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

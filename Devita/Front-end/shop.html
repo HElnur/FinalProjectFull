@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Boxicons CDN-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--Icon-->
+    <link rel="icon" href="/assets/image/icons8-headphones-64.png" type="image/x-icon">
+
+    <!--Fonts CDN-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!--Bootstrap Css CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Owl carousel CSS-->
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Custom Css-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Devita - Shop</title>
+</head>
+
+<body>
+    <!--Header start-->
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 d-flex align-items-center justify-content-md-start justify-content-center">
+                        <ul class="language">
+                            <li>
+                                <a href="#" type="button" data-bs-toggle="dropdown" aria-expanded="false">Language:
+                                    English<i class="fas fa-chevron-down"></i></a>
+
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            French
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            German
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Italians
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+
+                        <ul class="currency">
+                            <li>
+                                <a href="#" type="button" data-bs-toggle="dropdown" aria-expanded="false">Currency:
+                                    USD<i class="fas fa-chevron-down"></i></a>
+
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            EURO
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            RUB
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            GBP
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center justify-content-md-end justify-content-center">
+                        <ul class="d-flex top-menu">
+                            <li>
+                                <a href="#">
+                                    Checkout
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    Cart
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    Wishlist
+                                </a>
+                            </li>
+
+                            <li class="register-sign-in">
+                                <a href="/sign-in.html" class="d-none">
+                                    <!-- Register or Sign In -->
+
+                                </a>
+
+                                <a href="/profile.html"><span>HE</span></a>
+
+                                <ul>
+                                    <li>
+                                        <a href="/profile.html"><i class="fas fa-user-circle pe-2"></i>Profile</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"><i class="fas fa-sign-out pe-2"></i>Log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 d-flex justify-content-lg-start justify-content-center">
+                        <div class="logo-image">
+                            <img class="img-fluid" src="/assets/image/logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 d-flex">
+                        <div class="row">
+                            <div
+                                class="col-lg-5 col-md-12 d-flex align-items-center justify-content-lg-start justify-content-center">
+                                <div class="call d-flex">
+                                    <div class="image">
+                                        <img class="img-fluid" src="/assets/image/headphone_icon.png" alt="">
+                                    </div>
+
+                                    <div class="text">
+                                        <p>Call us</p>
+                                        <p>Free Support: (012) 800 456 789</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-5 col-md-12 d-flex align-items-center justify-content-lg-end justify-content-center">
+                                <div class="search">
+                                    <form action="#">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Search product..."
+                                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-2 col-md-12 d-flex align-items-center justify-content-lg-start justify-content-center">
+                                <div class="order position-relative">
+                                    <a href="/cart.html" class="order-text position-relative"><i
+                                            class='bx bxs-shopping-bag-alt'></i>$0.00 <i
+                                            class="ps-1 fa-solid fa-angle-down"></i>
+                                        <span
+                                            class="order-badge position-absolute py-1 px-2 top-0 translate-middle rounded-circle">
+                                            <span class="visually count">0</span>
+                                        </span>
+                                    </a>
+
+                                    <div class="shopping-cart position-absolute">
+                                        <div class="shopping-cart-header">
+                                            <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+                                            <div class="shopping-cart-total">
+                                                <span class="lighter-text">Total:</span>
+                                                <span class="main-color-text">$2,229.97</span>
+                                            </div>
+                                        </div>
+                                        <!--end shopping-cart-header -->
+
+                                        <ul class="shopping-cart-items">
+                                            <li class="clearfix d-flex">
+                                                <img width="20%" height="20%" src="/assets/image/24-300x300.jpg"
+                                                    alt="item1" />
+                                                <div class="price-prdname p-3">
+                                                    <span class="item-name">Sony DSC-RX100M III</span>
+                                                    <span class="item-price">$849.99</span>
+                                                    <span class="item-quantity">Quantity: 01</span>
+                                                </div>
+                                            </li>
+
+                                            <li class="clearfix d-flex">
+                                                <img width="20%" height="20%" src="/assets/image/17.jpg" alt="item1" />
+                                                <div class="price-prdname p-3">
+                                                    <span class="item-name">Sony DSC-RX100M III</span>
+                                                    <span class="item-price">$849.99</span>
+                                                    <span class="item-quantity">Quantity: 01</span>
+                                                </div>
+                                            </li>
+
+
+                                        </ul>
+
+                                        <a href="#" class="button">Checkout</a>
+                                    </div>
+                                    <!--end shopping-cart -->
+                                    <!--end container -->
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom-header">
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container p-0">
+                            <a class="navbar-brand" href="#">Menu</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbarTogglerIcon">
+                                    <i class="fa-solid fa-bars"></i>
+                                </span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav navbar-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">HOME<i
+                                                class="fa-solid fa-angle-down"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">BLOG<i class="fa-solid fa-angle-down"></i></a>
+                                    </li>
+                                    <li class="nav-item shop">
+                                        <a class="nav-link" href="#">SHOP<i class="fa-solid fa-angle-down"></i></a>
+
+                                        <ul>
+                                            <li>
+                                                <a href="#">Laptops & Computer</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">Phones</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">Headphones</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/profile.html">PROFILE</a>
+                                    </li>
+                                    <li class="nav-item border-0">
+                                        <a class="nav-link" href="#">BUY THEME</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header end-->
+
+    <!--Main start-->
+    <main>
+        <section id="breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb">
+                            <ul class="d-flex">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="active">
+                                        Shop
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="filter-products" class="mt-5 mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 d-flex justify-content-center">
+                        <div class="filter p-3" style="width: 100%; height: 100%;">
+                            <div class="categories">
+                                <div class="title">
+                                    <h3>Shop By Categories</h3>
+                                </div>
+
+                                <div class="category-list">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Headphone</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">Laptops & Computer<i
+                                                    class="fas fa-chevron-down"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">Phone<i
+                                                    class="fas fa-chevron-down"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Smart Watch</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Speaker</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Uncategorized</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="colors">
+                                <div class="title">
+                                    <h3>Color</h3>
+                                </div>
+
+                                <div class="color-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        Black
+                                                    </label>
+                                                </div>
+
+                                            </a>
+                                        </li>
+
+
+                                        <li>
+                                            <a href="#">
+
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        Blue
+                                                    </label>
+                                                </div>
+
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        Green
+                                                    </label>
+                                                </div>
+
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        Red
+                                                    </label>
+                                                </div>
+
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        White
+                                                    </label>
+                                                </div>
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+                            <div class="price-filter">
+                                <div class="title">
+                                    <h3>Price</h3>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div id="slider-range"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row slider-labels">
+                                        <div class="col-xs-6 caption">
+                                            <strong>Min:</strong> <span id="slider-range-value1"></span>
+                                        </div>
+                                        <div class="col-xs-6 text-right caption">
+                                            <strong>Max:</strong> <span id="slider-range-value2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <form>
+                                                <input type="hidden" name="min-value" value="">
+                                                <input type="hidden" name="max-value" value="">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-12 d-flex justify-content-center" style="height: 100%;">
+                        <div class="products" style="width: 100%; height: 100%;">
+                            <div class="top-image">
+                                <img class="img-fluid" src="/assets/image/cate_image.jpg" width="100%" alt="">
+                            </div>
+
+                            <ul class="nav nav-pills mb-3 toolbar" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                        aria-selected="true"><i class="fas fa-th-large"></i></button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false"><i
+                                            class="fas fa-list-ul"></i></button>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab">
+                                    <div class="products-box">
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-3 col-md-4 col-sm-6 product ">
+                                                    <div class="top-product">
+                                                        <div class="content">
+                                                            <div class="card-image">
+                                                                <img class="image" src="/assets/image/17.jpg"
+                                                                    alt="">
+                                                                <img class="hover-image"
+                                                                    src="/assets/image/17-17-300x300.jpg" alt="">
+                                                                <div
+                                                                    class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                                    <span
+                                                                        style="left: 20px; position: absolute;">-11%</span>
+                                                                    <button style="left:160px;" type="button"
+                                                                        class="btn p-0 position-absolute"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModal">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-text">
+                                                                <div class="tags">
+                                                                    <a href="#">
+                                                                        Accessories,
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        KeyBoard,
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        Mouse
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="product-name">
+                                                                    <a href="#">Aliquam lobortis</a>
+                                                                </div>
+
+                                                                <div class="product-price">
+                                                                    <span class="price">
+                                                                        <span class="currency">$</span>
+                                                                        111.00
+                                                                    </span>
+
+                                                                    <span class="disc-price">
+                                                                        <span class="currency">$</span>
+                                                                        99.00
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="hover-info">
+                                                                <div class="stars">
+                                                                    <span><i class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i></span>
+                                                                </div>
+
+                                                                <div class="product-desc text-center">
+                                                                    <p>Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit.
+                                                                        Nemo saepe voluptatem aspernatur fugit.</p>
+                                                                </div>
+
+                                                                <div class="buttons">
+                                                                    <a href="#">
+                                                                        <i class='bx bx-heart'></i>
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        ADD TO CARD
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        <i class='bx bx-slider'></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-4 col-sm-6 product ">
+                                                    <div class="top-product">
+                                                        <div class="content">
+                                                            <div class="card-image">
+                                                                <img class="image" src="/assets/image/1-300x300.jpg"
+                                                                    alt="">
+                                                                <img class="hover-image"
+                                                                    src="/assets/image/1-1-300x300.jpg" alt="">
+                                                                <div
+                                                                    class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                                    <span
+                                                                        style="left: 20px; position: absolute;">-11%</span>
+                                                                    <button style="left:160px;" type="button"
+                                                                        class="btn p-0 position-absolute"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModal">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-text">
+                                                                <div class="tags">
+                                                                    <a href="#">
+                                                                        Accessories,
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        KeyBoard,
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        Mouse
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="product-name">
+                                                                    <a href="#">Aliquam lobortis</a>
+                                                                </div>
+
+                                                                <div class="product-price">
+                                                                    <span class="price">
+                                                                        <span class="currency">$</span>
+                                                                        111.00
+                                                                    </span>
+
+                                                                    <span class="disc-price">
+                                                                        <span class="currency">$</span>
+                                                                        99.00
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="hover-info">
+                                                                <div class="stars">
+                                                                    <span><i class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i></span>
+                                                                </div>
+
+                                                                <div class="product-desc text-center">
+                                                                    <p>Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit.
+                                                                        Nemo saepe voluptatem aspernatur fugit.</p>
+                                                                </div>
+
+                                                                <div class="buttons">
+                                                                    <a href="#">
+                                                                        <i class='bx bx-heart'></i>
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        ADD TO CARD
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        <i class='bx bx-slider'></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-4 col-sm-6 product ">
+                                                    <div class="top-product">
+                                                        <div class="content">
+                                                            <div class="card-image">
+                                                                <img class="image" src="/assets/image/24-300x300.jpg"
+                                                                    alt="">
+                                                                <img class="hover-image"
+                                                                    src="/assets/image/24-24-300x300.jpg" alt="">
+                                                                <div
+                                                                    class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                                    <span
+                                                                        style="left: 20px; position: absolute;">-11%</span>
+                                                                    <button style="left:160px;" type="button"
+                                                                        class="btn p-0 position-absolute"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModal">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-text">
+                                                                <div class="tags">
+                                                                    <a href="#">
+                                                                        Accessories,
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        KeyBoard,
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        Mouse
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="product-name">
+                                                                    <a href="#">Aliquam lobortis</a>
+                                                                </div>
+
+                                                                <div class="product-price">
+                                                                    <span class="price">
+                                                                        <span class="currency">$</span>
+                                                                        111.00
+                                                                    </span>
+
+                                                                    <span class="disc-price">
+                                                                        <span class="currency">$</span>
+                                                                        99.00
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="hover-info">
+                                                                <div class="stars">
+                                                                    <span><i class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i></span>
+                                                                </div>
+
+                                                                <div class="product-desc text-center">
+                                                                    <p>Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit.
+                                                                        Nemo saepe voluptatem aspernatur fugit.</p>
+                                                                </div>
+
+                                                                <div class="buttons">
+                                                                    <a href="#">
+                                                                        <i class='bx bx-heart'></i>
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        ADD TO CARD
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        <i class='bx bx-slider'></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-4 col-sm-6 product ">
+                                                    <div class="top-product">
+                                                        <div class="content">
+                                                            <div class="card-image">
+                                                                <img class="image" src="/assets/image/19-300x300.jpg"
+                                                                    alt="">
+                                                                <img class="hover-image"
+                                                                    src="/assets/image/19-19-300x300.jpg" alt="">
+                                                                <div
+                                                                    class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                                    <span
+                                                                        style="left: 20px; position: absolute;">-11%</span>
+                                                                    <button style="left:160px;" type="button"
+                                                                        class="btn p-0 position-absolute"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModal">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-text">
+                                                                <div class="tags">
+                                                                    <a href="#">
+                                                                        Accessories,
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        KeyBoard,
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        Mouse
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="product-name">
+                                                                    <a href="#">Aliquam lobortis</a>
+                                                                </div>
+
+                                                                <div class="product-price">
+                                                                    <span class="price">
+                                                                        <span class="currency">$</span>
+                                                                        111.00
+                                                                    </span>
+
+                                                                    <span class="disc-price">
+                                                                        <span class="currency">$</span>
+                                                                        99.00
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="hover-info">
+                                                                <div class="stars">
+                                                                    <span><i class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i><i
+                                                                            class='bx bx-star'></i></span>
+                                                                </div>
+
+                                                                <div class="product-desc text-center">
+                                                                    <p>Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit.
+                                                                        Nemo saepe voluptatem aspernatur fugit.</p>
+                                                                </div>
+
+                                                                <div class="buttons">
+                                                                    <a href="#">
+                                                                        <i class='bx bx-heart'></i>
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        ADD TO CARD
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        <i class='bx bx-slider'></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab">
+                                    <div class="horizontal-product">
+                                        <div class="container p-0">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex">
+                                                    <div class="prod-image">
+                                                        <img class="image" src="/assets/image/17.jpg" alt="">
+                                                        <img class="hover-image" src="/assets/image/17-17-300x300.jpg"
+                                                            alt="">
+
+                                                        <div
+                                                            class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                            <span style="left: 20px; position: absolute;">-11%</span>
+                                                            <button style="left:190px;" type="button"
+                                                                class="btn p-0 position-absolute" data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModal">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="prod-info">
+                                                        <div class="tags">
+                                                            <a href="#">
+                                                                Accessories,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                KeyBoard,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                Mouse
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="product-name">
+                                                            <a href="#">Aliquam lobortis</a>
+                                                        </div>
+
+                                                        <div class="stars">
+                                                            <span><i class='bx bx-star'></i><i class='bx bx-star'></i><i
+                                                                    class='bx bx-star'></i><i class='bx bx-star'></i><i
+                                                                    class='bx bx-star'></i></span>
+                                                        </div>
+
+                                                        <div class="product-price">
+                                                            <span class="price">
+                                                                <span class="currency">$</span>
+                                                                111.00
+                                                            </span>
+
+                                                            <span class="disc-price">
+                                                                <span class="currency">$</span>
+                                                                99.00
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="product-desc">
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Fusce posuere metus vitae arcu imperdiet, id aliquet
+                                                                ante scelerisque. Sed sit amet sem vitae urna fringilla
+                                                                tempus.</p>
+                                                        </div>
+
+                                                        <div class="buttons">
+
+                                                            <a href="#">
+                                                                ADD TO CARD
+                                                            </a>
+                                                            <a href="#">
+                                                                <i class='bx bx-heart'></i>
+                                                            </a>
+
+
+
+                                                            <a href="#">
+                                                                <i class='bx bx-slider'></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="horizontal-product">
+                                        <div class="container p-0">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex">
+                                                    <div class="prod-image">
+                                                        <img class="image" src="/assets/image/1-300x300.jpg" alt="">
+                                                        <img class="hover-image" src="/assets/image/1-1-300x300.jpg"
+                                                            alt="">
+
+                                                        <div
+                                                            class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                            <span style="left: 20px; position: absolute;">-11%</span>
+                                                            <button style="left:190px;" type="button"
+                                                                class="btn p-0 position-absolute" data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModal">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="prod-info">
+                                                        <div class="tags">
+                                                            <a href="#">
+                                                                Accessories,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                KeyBoard,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                Mouse
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="product-name">
+                                                            <a href="#">Aliquam lobortis</a>
+                                                        </div>
+
+                                                        <div class="stars">
+                                                            <span><i class='bx bx-star'></i><i class='bx bx-star'></i><i
+                                                                    class='bx bx-star'></i><i class='bx bx-star'></i><i
+                                                                    class='bx bx-star'></i></span>
+                                                        </div>
+
+                                                        <div class="product-price">
+                                                            <span class="price">
+                                                                <span class="currency">$</span>
+                                                                111.00
+                                                            </span>
+
+                                                            <span class="disc-price">
+                                                                <span class="currency">$</span>
+                                                                99.00
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="product-desc">
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Fusce posuere metus vitae arcu imperdiet, id aliquet
+                                                                ante scelerisque. Sed sit amet sem vitae urna fringilla
+                                                                tempus.</p>
+                                                        </div>
+
+                                                        <div class="buttons">
+
+                                                            <a href="#">
+                                                                ADD TO CARD
+                                                            </a>
+                                                            <a href="#">
+                                                                <i class='bx bx-heart'></i>
+                                                            </a>
+
+
+
+                                                            <a href="#">
+                                                                <i class='bx bx-slider'></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="horizontal-product">
+                                        <div class="container p-0">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex">
+                                                    <div class="prod-image">
+                                                        <img class="image" src="/assets/image/24-300x300.jpg" alt="">
+                                                        <img class="hover-image" src="/assets/image/24-24-300x300.jpg"
+                                                            alt="">
+
+                                                        <div
+                                                            class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                            <span style="left: 20px; position: absolute;">-11%</span>
+                                                            <button style="left:190px;" type="button"
+                                                                class="btn p-0 position-absolute" data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModal">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="prod-info">
+                                                        <div class="tags">
+                                                            <a href="#">
+                                                                Accessories,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                KeyBoard,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                Mouse
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="product-name">
+                                                            <a href="#">Aliquam lobortis</a>
+                                                        </div>
+
+                                                        <div class="stars">
+                                                            <span><i class='bx bx-star'></i><i class='bx bx-star'></i><i
+                                                                    class='bx bx-star'></i><i class='bx bx-star'></i><i
+                                                                    class='bx bx-star'></i></span>
+                                                        </div>
+
+                                                        <div class="product-price">
+                                                            <span class="price">
+                                                                <span class="currency">$</span>
+                                                                111.00
+                                                            </span>
+
+                                                            <span class="disc-price">
+                                                                <span class="currency">$</span>
+                                                                99.00
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="product-desc">
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Fusce posuere metus vitae arcu imperdiet, id aliquet
+                                                                ante scelerisque. Sed sit amet sem vitae urna fringilla
+                                                                tempus.</p>
+                                                        </div>
+
+                                                        <div class="buttons">
+
+                                                            <a href="#">
+                                                                ADD TO CARD
+                                                            </a>
+                                                            <a href="#">
+                                                                <i class='bx bx-heart'></i>
+                                                            </a>
+
+
+
+                                                            <a href="#">
+                                                                <i class='bx bx-slider'></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="horizontal-product">
+                                        <div class="container p-0">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex">
+                                                    <div class="prod-image">
+                                                        <img class="image" src="/assets/image/19-300x300.jpg" alt="">
+                                                        <img class="hover-image" src="/assets/image/19-19-300x300.jpg"
+                                                            alt="">
+
+                                                        <div
+                                                            class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                            <span style="left: 20px; position: absolute;">-11%</span>
+                                                            <button style="left:190px;" type="button"
+                                                                class="btn p-0 position-absolute" data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModal">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="prod-info">
+                                                        <div class="tags">
+                                                            <a href="#">
+                                                                Accessories,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                KeyBoard,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                Mouse
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="product-name">
+                                                            <a href="#">Aliquam lobortis</a>
+                                                        </div>
+
+                                                        <div class="stars">
+                                                            <span><i class='bx bx-star'></i><i class='bx bx-star'></i><i
+                                                                    class='bx bx-star'></i><i class='bx bx-star'></i><i
+                                                                    class='bx bx-star'></i></span>
+                                                        </div>
+
+                                                        <div class="product-price">
+                                                            <span class="price">
+                                                                <span class="currency">$</span>
+                                                                111.00
+                                                            </span>
+
+                                                            <span class="disc-price">
+                                                                <span class="currency">$</span>
+                                                                99.00
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="product-desc">
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Fusce posuere metus vitae arcu imperdiet, id aliquet
+                                                                ante scelerisque. Sed sit amet sem vitae urna fringilla
+                                                                tempus.</p>
+                                                        </div>
+
+                                                        <div class="buttons">
+
+                                                            <a href="#">
+                                                                ADD TO CARD
+                                                            </a>
+                                                            <a href="#">
+                                                                <i class='bx bx-heart'></i>
+                                                            </a>
+
+
+
+                                                            <a href="#">
+                                                                <i class='bx bx-slider'></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">...</div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <!--Main end-->
+
+
+    <!--Brands slider start-->
+    <section id="brand-slider">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme owl-carousel-brand">
+                    <div class="item">
+                        <img src="/assets/image/br1.png" alt="">
+                    </div>
+
+                    <div class="item">
+                        <img src="/assets/image/br2.png" alt="">
+                    </div>
+
+                    <div class="item">
+                        <img src="/assets/image/br3.png" alt="">
+                    </div>
+
+                    <div class="item">
+                        <img src="/assets/image/br4.png" alt="">
+                    </div>
+
+                    <div class="item">
+                        <img src="/assets/image/br5.png" alt="">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Brands slider end-->
+
+    <!--Footer start-->
+    <footer>
+        <div class="container">
+            <div class="row services">
+                <div class="col-lg-4 col-md-12">
+                    <div class="text first-service">
+                        <div class="content">
+                            <div class="title">
+                                <h3>Free Shipping</h3>
+                            </div>
+
+                            <div class="desc">
+                                <p>Free shipping on all order</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="text">
+                        <div class="content">
+                            <div class="title">
+                                <h3>Free Shipping</h3>
+                            </div>
+
+                            <div class="desc">
+                                <p>Free shipping on all order</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="text">
+                        <div class="content">
+                            <div class="title">
+                                <h3>Free Shipping</h3>
+                            </div>
+
+                            <div class="desc">
+                                <p>Free shipping on all order</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row footer-menu">
+                <div class="col-lg-4 col-md-12 about-us">
+                    <div class="title">
+                        <h3>About Us</h3>
+                    </div>
+
+                    <div class="desc">
+                        <p>We are a team of designers and developers that create high quality Magento, Prestashop,
+                            Opencart [...].<br>
+                            <a class="view-map" href="#"><i class="fas fa-map-marker-alt"></i>View on map</a></p>
+                    </div>
+
+                    <div class="footer-social-media">
+                        <ul class="d-flex">
+                            <li class="facebook">
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+
+                            <li class="twitter">
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+
+                            <li class="instagram">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li class="google">
+                                <a href="#">
+                                    <i class="fab fa-google-plus-g"></i>
+                                </a>
+                            </li>
+
+                            <li class="rss">
+                                <a href="#">
+                                    <i class="fas fa-rss"></i>
+                                </a>
+                            </li>
+
+                            <li class="dribbble">
+                                <a href="#">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </li>
+
+                            <li class="vimeo">
+                                <a href="#">
+                                    <i class="fab fa-vimeo-v"></i>
+                                </a>
+                            </li>
+
+                            <li class="pinterest">
+                                <a href="#">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </a>
+                            </li>
+
+                            <li class="skype">
+                                <a href="#">
+                                    <i class="fab fa-skype"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 information">
+                    <div class="content">
+                        <div class="title">
+                            <h3>Information</h3>
+                        </div>
+                        <div class="information-menu">
+                            <ul>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Shop</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Contact 2</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Return Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 my-account">
+                    <div class="content">
+                        <div class="title">
+                            <h3>My Account</h3>
+                        </div>
+                        <div class="account-menu">
+                            <ul>
+                                <li>
+                                    <a href="#">My Account</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Cart</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Checkout</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Validation</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Wishlist</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 contact-us">
+                    <div class="content">
+                        <div class="contact-us-menu">
+                            <div class="title">
+                                <h3>Contact Us</h3>
+                            </div>
+
+                            <div class="desc">
+                                <p>Address: 123 Main Street, Anytown, CA 12345 - USA.<br>
+                                    Telephone Enquiry: (012) 800 456 789-987<br>
+                                    Email: Contact@plazathemes.com</p>
+                            </div>
+                        </div>
+
+                        <div class="opening-time">
+                            <div class="title">
+                                <h3>Opening Time</h3>
+                            </div>
+
+                            <div class="desc">
+                                <p>Open: <strong>8:00 AM</strong> - Close: <strong>18:00 PM</strong><br>Saturday -
+                                    Sunday: Close</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row menu-link-1">
+                <div class="d-flex justify-content-center">
+                    <ul class="d-flex flex-wrap">
+                        <li>
+                            <a href="#">
+                                Online Shopping
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Promotions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                My Orders
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Help
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Customer Service
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Support
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Most Populars
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                New Arrivals
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Special Products
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Manufacturers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Our Stores
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row menu-link-2">
+                <div class="d-flex justify-content-center">
+                    <ul class="d-flex flex-wrap">
+                        <li>
+                            <a href="#">
+                                Shipping
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Payments
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Warantee
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Refunds
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Checkout
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Discount
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Terms & Conditions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Policy Shipping
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Returns
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Refunds
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row payment justify-content-center">
+                <div class="payment-image mt-5">
+                    <img src="/assets/image/payment.png" width="100%" height="100%" alt="">
+
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+    <!--Footer end-->
+    <!--Copyright start-->
+    <section id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="text">
+                    <p>Copyright © 2022 PlazaThemes. All Right Reserved.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Copyright end-->
+
+
+    <!--Bootstrap JS CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+
+    <!--JQuery CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--Owl carousel JS-->
+    <script src="/assets/js/owl.carousel.min.js"></script>
+
+    <!--Best owl carousel-->
+    <script src="/assets/js/_bestOwlCarousel.js"></script>
+
+    <!--Custom JS-->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/price-filter.js"></script>
+</body>
+
+</html>

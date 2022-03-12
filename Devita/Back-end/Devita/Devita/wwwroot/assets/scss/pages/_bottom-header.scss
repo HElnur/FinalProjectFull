@@ -1,0 +1,92 @@
+header {
+    .bottom-header {
+        nav {
+            .navbar-brand {
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                color: #FFFFFF;
+                font-weight: 700;
+                display: none;
+            }
+
+            .navbar-toggler {
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            .navbarTogglerIcon {
+                i {
+                    color: #FFFFFF;
+                    font-size: 16px;
+                }
+            }
+
+            .navbar-menu {
+                li {
+                    padding: 0px 20px;
+
+                    &:first-child {
+                        padding-left: 0px;
+                    }
+
+                    a {
+                        font-size: 14px;
+                        color: #FFFFFF;
+                        font-weight: 500;
+                        font-family: 'Rubik', sans-serif;
+                        display: flex;
+                        align-items: center;
+
+                        i {
+                            font-size: 10px;
+                            margin-left: 3px;
+                        }
+
+                    }
+                }
+
+                .shop {
+                    position: relative;
+                    ul {
+                        background-color: #FFFFFF;
+                        border-radius: 0.3rem;
+                        display: block;
+                        position: absolute;
+                        width: 150px;
+                        top: 100px;
+                        z-index: 999 !important;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all .5s ease;
+
+                        li {
+                            padding: 0px 10px !important;
+                            line-height: 26px;
+                            a {
+                                color: #7a7a7a;
+                                font-size: 12.992px;
+                                font-family: 'Rubik', sans-serif;
+                                font-weight: 500;
+                                text-decoration: none;
+                                transition: all .5s ease;
+                                &:hover {
+                                    color: #0363CD;
+
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        ul {
+                            visibility: visible !important;
+                            opacity: 1 !important;
+                            top: 38px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

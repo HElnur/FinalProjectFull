@@ -1,0 +1,99 @@
+#cart {
+    main {
+
+        #breadcrumb {
+            background-color: #F7F7F7;
+
+            .breadcrumb {
+                margin-top: 20px;
+
+                ul {
+                    li {
+                        a {
+                            font-size: 12.992px;
+                            font-family: 'Rubik', sans-serif;
+                            color: #A4A4A4;
+                            font-weight: 400;
+                            text-decoration: none;
+                        }
+
+                        &:not(:last-child):after {
+                            content: "/";
+                            display: inline-block;
+                            vertical-align: middle;
+                            color: #757575;
+                            margin: 0 5px;
+                        }
+
+                        .active {
+                            color: #0363CD;
+                        }
+                    }
+                }
+            }
+
+            .title {
+                margin-bottom: 20px;
+
+                h3 {
+                    color: #242424;
+                    font-family: 'Rubik', sans-serif;
+                    font-weight: 500;
+                    font-size: 35px;
+                }
+            }
+        }
+
+        #product-table {
+            .prod-table {
+                font-family: 'Rubik', sans-serif;
+
+                margin-top: 30px;
+                margin-bottom: 30px;
+
+                thead {
+                    background-color: #F9F9F9;
+                    border: 1px solid #e6e3e3;
+                    text-align: center;
+
+                    th {
+                        padding: 10px;
+                    }
+                }
+
+                tbody {
+
+                    td {
+                        vertical-align: middle;
+
+                        a {
+                            text-decoration: none;
+                            color: red;
+                        }
+                    }
+
+                    border-top: none;
+                    text-align: center;
+
+                    img {
+                        width: 75px;
+                        height: 75px;
+                    }
+                }
+            }
+
+            .return-shop {
+                margin-bottom: 30px;
+
+                a {
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    padding: 10px 15px;
+                    background-color: #0363CD;
+                    font-family: 'Rubik', sans-serif;
+                    border-radius: 0.3rem;
+                }
+            }
+        }
+    }
+}

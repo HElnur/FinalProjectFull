@@ -1,0 +1,38 @@
+﻿@model Order
+<tr class="explode hide">
+    <td colspan="6" style="background-color: #0363CD; font-family: 'Rubik', sans-serif; color: #FFFFFF !important; display: none;">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Count</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderItems)
+                {
+                    <tr>
+                        <td>@item.Product.Name</td>
+                        <td>@item.Count</td>
+                        <td>
+                            @if (item.Product.DiscountPercent > 0)
+                            {
+                                @((item.Product.SalePrice * (1 - item.Product.DiscountPercent / 100)).ToString("#.00"));
+                            }
+
+                            else
+                            {
+                                @item.Product.SalePrice
+
+                            }
+
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </td>
+</tr>

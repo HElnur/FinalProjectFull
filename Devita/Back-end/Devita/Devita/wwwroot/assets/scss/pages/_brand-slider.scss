@@ -1,0 +1,14 @@
+#brand-slider {
+    .owl-carousel-brand {
+        border-top: 1px solid #E1E1E1;
+    }
+    .item {
+        display: flex;
+        justify-content: center;
+        
+        img {
+            width: 80%;
+            height: 50%;
+        }
+    }
+}

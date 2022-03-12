@@ -1,0 +1,293 @@
+// @media only screen and (max-width:1400px) {
+//     #middle-header {
+//         .order {
+//             .order-text {
+//                 margin-left: 100px !important;
+//             }
+//         }
+//     }
+// }
+
+@media only screen and (max-width: 1200px) {
+    #profile-order{
+        #profile {
+            .profile {
+                .content {
+                    
+
+                    input {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+
+    .comment {
+        .user-comment {
+            width: 100% !important;
+        }
+    }
+}
+
+@media only screen and (max-width:1124px) {
+    #products {
+        .owl-carousel {
+            .owl-prev {
+                width: 30px !important;
+
+            }
+
+            .owl-next {
+                width: 30px !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .middle-header {
+
+        .call {
+            margin-top: 10px;
+        }
+
+        .search {
+            margin-top: 10px;
+        }
+
+        .order {
+            margin: 10px 0px 0px 0px !important;
+
+            .order-text {
+                margin-left: 0px !important;
+            }
+
+            .shopping-cart {
+                width: 200px;
+            }
+        }
+    }
+
+    .bottom-header {
+        nav {
+            .navbar-brand {
+                display: block !important;
+            }
+
+            .navbar-menu {
+                border: 1px solid rgba($color: #FFFFFF, $alpha: 0.6);
+
+                li {
+                    padding: 0px 10px !important;
+                    margin: 0px 10px;
+                    border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: 0.6);
+
+                    a {
+                        padding: 15px 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    #hero {
+        .carousel-inner {
+            height: 122px !important;
+
+            .carousel-item {
+                height: 122px !important;
+
+                &[data-order="1"] {
+                    .text {
+                        .small-caption {
+                            display: none;
+                        }
+
+                        .price {
+                            display: none;
+                        }
+
+                        .shoppingBtn {
+                            display: none;
+                        }
+
+                        .title {
+                            font-size: 17px;
+                        }
+                    }
+
+                    .images {
+                        img {
+                            width: 20%;
+                            height: 20%;
+                        }
+                    }
+                }
+
+                &[data-order="2"] {
+                    .text {
+                        .small-caption {
+                            display: none;
+                        }
+
+                        .price {
+                            display: none;
+                        }
+
+                        .shoppingBtn {
+                            display: none;
+                        }
+
+                        .title {
+                            font-size: 17px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    #products {
+        .owl-carousel {
+            .owl-nav {
+                display: none;
+
+                .owl-prev {
+                    width: 30px;
+                }
+
+                .owl-next {
+                    width: 30px;
+                }
+            }
+        }
+        .products-options {
+            .options {
+                &::before {
+                    border-color: transparent !important;
+                }
+
+                ul {
+                    justify-content: center;
+                    li {
+                        width: 80%;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+
+        .modal-discount {
+            button {
+                left: 130px !important;
+            }
+        }
+    }
+
+    #home-static {
+        .text {
+            .title {
+                h3 {
+                    font-size: 24px !important;
+                }
+            }
+
+            .desc {
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    #best-selling {
+        .add-cart-wishlist {
+            .add-cart {
+                font-size: 10px !important;
+            }
+        }
+    }
+
+    #top-headphones {
+        .modal-discount {
+            button {
+                left: 180px !important;
+            }
+        }
+    }
+
+    .footer-menu {
+        .about-us {
+            text-align: center;
+
+            .footer-social-media {
+                margin: 15px 0px 0px 0px !important;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .information {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            ul {
+                li {
+                    text-align: center;
+                }
+            }
+        }
+
+        .my-account {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            ul {
+                li {
+                    text-align: center;
+                }
+            }
+        }
+
+        .contact-us {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+
+            .content {
+                text-align: center;
+            }
+        }
+    }
+
+    .menu-link-1 {
+        margin-top: 10px;
+        ul {
+            justify-content: center;
+        }
+    }
+
+    .menu-link-2 {
+        ul {
+            justify-content: center;
+        }
+    }
+
+    #profile-order{
+        #profile {
+            .profile {
+                .content {
+                    label {
+                        width: 22%;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}

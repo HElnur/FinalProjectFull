@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "Forgot";
+}
+@model ForgotPasswordViewModel;
+
+<div id="forgot">
+    <div class='box'>
+        <div class='col-1'>
+
+        </div>
+        <div class='col-2'>
+            <div class='form d-flex align-items-center'>
+
+                <form asp-action="forgot">
+                    <div class='form-box'>
+                        <label>Email</label>
+                        <input asp-for="Email" autocomplete="off" placeholder='Enter email'>
+
+                    </div>
+                    <div class='reigster'>
+                        <a class='create' asp-controller="account" asp-action="signin">Do you remember?</a>
+
+                    </div>
+
+                    <button type="submit">
+                        Send
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@*<div id="forgot">
+    <div class="wrapper">
+        <div class="container p-0">
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Welcome Back</h2>
+                    <p>Do you remember?</p>
+                    <a class="btn" asp-controller="account" asp-action="SignIn">Sign in</a>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="login-form">
+                    <h2>Forgot password?</h2>
+                    <form method="post">
+                        <p>
+                            <label>Email address<span>*</span></label>
+                            <input type="email" asp-for="Email" placeholder="Email" required>
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </p>
+
+                        <p>
+                            <input type="submit" value="Send" />
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>*@
+

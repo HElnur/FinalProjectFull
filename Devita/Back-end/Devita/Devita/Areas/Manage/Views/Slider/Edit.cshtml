@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@model Slider
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-xxl-12">
+                <form asp-action="edit" method="post" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Edit slider</h4>
+                        </div>
+                        <div class="card-body">
+                            <h3>Text</h3>
+
+                            <textarea name="" id="editor" cols="30" rows="10" asp-for="Text"></textarea>
+                            <span asp-validation-for="Text"></span>
+
+                            <div class="form-group mt-4">
+                                <label asp-for="BgImageFile" style="font-family: 'Rubik', sans-serif; color: #886CC0; font-weight: 400; font-size: 18px;">Background image</label>
+                                <input asp-for="BgImageFile" />
+                                <span class="text-danger" asp-validation-for="BgImage"></span>
+                            </div>
+
+                            <div class="img-box">
+                                <img src="~/uploads/slider/@Model.BgImage" width="450" height="150" />
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <label asp-for="ImageFile" style="font-family: 'Rubik', sans-serif; color: #886CC0; font-weight: 400; font-size: 18px;">Slider image</label>
+                                <input asp-for="ImageFile" />
+                                <span class="text-danger" asp-validation-for="ImageFile"></span>
+                            </div>
+
+                            <div class="img-box d-flex flex-column justify-content-center" style="width: 20%;">
+                                <input type="hidden" name="Image" value="@Model.Image" />
+                                <img width="150" height="150" src="~/uploads/slider/@Model.Image" alt="Alternate Text" />
+                                <a class="d-flex justify-content-center img-box-remove" data-id="@Model.Id" style="width: 68%; background-color: red; color: #FFFFFF; font-size: 18px;"><i class="fas fa-trash-alt py-2"></i></a>
+                            </div>
+
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit">Edit</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}
+

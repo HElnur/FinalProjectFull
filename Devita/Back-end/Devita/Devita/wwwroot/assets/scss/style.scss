@@ -1,0 +1,71 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@import "./pages/top-header";
+@import "./pages/middle-header";
+@import "./pages/bottom-header";
+@import "./pages/hero";
+@import "./pages/wrapper";
+@import "./pages/product";
+@import "./pages/home-static";
+@import "./pages/best-selling";
+@import "./pages/top-headphones";
+@import "./pages/brand-slider";
+@import "./pages/footer";
+@import "./pages/services";
+@import "./pages/footer-menu";
+@import "./pages/copyright";
+@import "./pages/sign-in";
+@import "./pages/register";
+@import "./pages/forgot";
+@import "./pages/reset-password.scss";
+@import "./pages/cart";
+@import "./pages/profile";
+@import "./pages/change-password";
+@import "./pages/order";
+@import "./pages/shop";
+@import "./pages/error";
+@import "./pages/product-detail";
+@import "./pages/review";
+@import "./pages/media-query";

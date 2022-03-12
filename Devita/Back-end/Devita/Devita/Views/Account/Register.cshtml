@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+@model MemberRegisterViewModel;
+
+<div id="register">
+    <div class='box'>
+        <div class='col-1'>
+
+        </div>
+        <div class='col-2'>
+            <div class='form'>
+
+                <form asp-action="register">
+                    <div class='form-box'>
+                        <label>Fullname</label>
+                        <input asp-for="FullName" placeholder='Enter fullname'>
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+
+                    </div>
+
+                    <div class='form-box'>
+                        <label>Username</label>
+                        <input asp-for="UserName" placeholder='Enter username'>
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+
+                    </div>
+
+                    <div class='form-box'>
+                        <label>Email</label>
+                        <input asp-for="Email" placeholder='Enter email'>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+
+                    </div>
+
+                    <div class='form-box'>
+                        <label>Password</label>
+                        <input asp-for="Password" placeholder='Enter password'>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+
+                    </div>
+
+                    <div class='form-box'>
+                        <label>Repeat password</label>
+                        <input asp-for="RepeatPassword" placeholder='Enter repeat password'>
+                        <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+
+                    </div>
+
+
+                    <div class='reigster'>
+                        <a class='create' asp-controller="account" asp-action="signin">Do you now have an account?</a>
+
+                    </div>
+                    <button type="submit">
+                        Register
+                    </button>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

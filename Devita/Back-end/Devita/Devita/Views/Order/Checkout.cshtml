@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewData["Title"] = "Checkout";
+    decimal TotalPrice = 0;
+    decimal SalePrice = 0;
+}
+
+@model CheckOutViewModel
+
+<div id="cart">
+    <main>
+        <section id="breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb">
+                            <ul class="d-flex">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="active">
+                                        Cart
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="title">
+                            <h3>Cart</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="product-table">
+            <div class="container">
+                <div class="row">
+                    <div class="prod-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">IMAGES</th>
+                                    <th scope="col">PRODUCT</th>
+                                    <th scope="col">PRICE</th>
+                                    <th scope="col">QUANTITY</th>
+                                    <th scope="col">TOTAL</th>
+                                    <th scope="col">DELETE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.CheckoutItems)
+                                {
+                                    SalePrice = item.Product.DiscountPercent > 0 ? (item.Product.SalePrice * (1 - item.Product.DiscountPercent / 100)) : item.Product.SalePrice;
+                                    TotalPrice = SalePrice * item.Count;
+
+                                    <tr>
+                                        <th scope="row">
+                                            <img src="/assets/image/@item.Product.ProductImages.FirstOrDefault(x => x.PosterStatus==true).Image" alt="">
+                                        </th>
+                                        <td>@item.Product.Name</td>
+                                        @if (item.Product.DiscountPercent > 0)
+                                        {
+                                            <td>$@((item.Product.SalePrice * (1 - item.Product.DiscountPercent/100)).ToString("#.00"))</td>
+
+                                        }
+
+                                        else
+                                        {
+                                            <td>$@item.Product.SalePrice</td>
+
+                                        }
+                                        <td>@item.Count</td>
+                                        <td>$@TotalPrice.ToString("#.00")</td>
+                                        <td><a class="btn deleteBtn" asp-action="deleteBasket" asp-controller="product" asp-route-id="@item.Product.Id"><i class="fas fa-trash"></i></a></td>
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <div class="return-shop d-flex">
+                        <a asp-controller="home" asp-action="index">RETURN TO SHOP</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <button type="button" class="btn ms-3" style="background-color: #0363CD; color: #FFFFFF; font-family: 'Rubik', sans-serif; font-weight: 400; " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Order
+                            </button>
+                        }
+                        else
+                        {
+                            <a asp-controller="account" asp-action="signin">Order</a>
+                        }
+                    </div>
+                    @await Html.PartialAsync("_CheckOutFormPartial", Model.Order)
+
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+

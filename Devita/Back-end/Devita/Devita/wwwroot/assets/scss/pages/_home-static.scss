@@ -1,0 +1,49 @@
+#home-static {
+    background-image: url("/assets/image/home-static.jpg");
+    height: 494.05px;
+    background-size: 100% 100%;
+
+    .text {
+        .title {
+            margin-bottom: 30px;
+
+            h3 {
+                color: #242424;
+                font-size: 48.02px;
+                font-family: 'Rubik', sans-serif;
+                font-weight: 300;
+            }
+        }
+
+        .desc {
+            margin-bottom: 16px;
+
+            p {
+                font-size: 17.99px;
+                font-family: 'Rubik', sans-serif;
+                color: #242424;
+                font-weight: 200;
+            }
+        }
+
+        .price {
+            margin-bottom: 30px;
+            span {
+                color: #0363CD;
+                font-family: 'Rubik', sans-serif;
+                font-size: 30.002px;
+            }
+        }
+
+        .discoverBtn {
+            a {
+                text-decoration: none;
+                font-family: 'Rubik', sans-serif;
+                padding: 15px 30px;
+                background-color: #222222;
+                color: #FFFFFF;
+                border-radius: 0.3rem;
+            }
+        }
+    }
+}

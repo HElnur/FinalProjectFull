@@ -1,0 +1,418 @@
+﻿
+@{
+    ViewData["Title"] = "Shop";
+}
+
+@model ShopViewModel
+<!--Main start-->
+<main>
+    <section id="breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb">
+                        <ul class="d-flex">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="active">
+                                    Shop
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="filter-products" class="mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 d-flex justify-content-center">
+                    <div class="filter p-3" style="width: 100%; height: 100%;">
+                        <div class="categories">
+                            <div class="title">
+                                <h3>Shop By Categories</h3>
+                            </div>
+
+                            <div class="category-list">
+                                <ul>
+
+                                    @foreach (var item in Model.Categories)
+                                    {
+                                        <li>
+                                            <a asp-action="shop" asp-controller="product" asp-route-categoryId="@item.Id">@item.Name</a>
+                                        </li>
+
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="colors">
+                            <div class="title">
+                                <h3>Color</h3>
+                            </div>
+
+                            <div class="color-menu">
+                                <ul>
+
+
+                                    @foreach (var item in Model.Colors)
+                                    {
+                                        <li>
+                                            <a href="#">
+
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox"
+                                                           name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        @item.Name
+                                                    </label>
+                                                </div>
+
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+                        <div class="price-filter">
+                            <div class="title">
+                                <h3>Price</h3>
+                            </div>
+                            <div class="container">
+
+                                <div class="single-block">
+                                    <h3 class="sidebar-title">Fillter By Price</h3>
+                                    <div class="range-slider pt--30">
+                                        <div class="sb-range-slider"></div>
+                                        <div class="slider-price">
+                                            <p>
+                                                <input type="text" id="amount" readonly="">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                @*<div class="row">
+                                        <div class="col-sm-12">
+                                            <div id="slider-range"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row slider-labels">
+                                        <div class="col-xs-6 caption">
+                                            <strong>Min:</strong> <span id="slider-range-value1"></span>
+                                        </div>
+                                        <div class="col-xs-6 text-right caption">
+                                            <strong>Max:</strong> <span id="slider-range-value2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <form>
+                                                <input type="hidden" name="min-value" value="">
+                                                <input type="hidden" name="max-value" value="">
+                                            </form>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12 d-flex justify-content-center" style="height: 100%;">
+                    <div class="products" style="width: 100%; height: 100%;">
+                        <div class="top-image">
+                            <img class="img-fluid" src="/assets/image/cate_image.jpg" width="100%" alt="">
+                        </div>
+
+                        <ul class="nav nav-pills mb-3 toolbar" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                        aria-selected="true">
+                                    <i class="fas fa-th-large"></i>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false">
+                                    <i class="fas fa-list-ul"></i>
+                                </button>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                 aria-labelledby="pills-home-tab">
+                                <div class="products-box">
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            @foreach (var item in Model.PagenetedProduct)
+                                            {
+                                                <div class="col-lg-3 col-md-4 col-sm-6 product ">
+                                                    <div class="top-product">
+                                                        <div class="content">
+                                                            <div class="card-image">
+                                                                <img class="image" src="/assets/image/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image"
+                                                                     alt="">
+                                                                <img class="hover-image"
+                                                                     src="/assets/image/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==false)?.Image" alt="">
+                                                                <div class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+
+                                                                    @if (item.DiscountPercent > 0)
+                                                                    {
+                                                                        <span style="left: 20px; position: absolute;">-@item.DiscountPercent.ToString("#")%</span>
+
+                                                                    }
+                                                                    <button style="left:160px;" type="button"
+                                                                            class="btn p-0 position-absolute"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#exampleModal">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-text">
+                                                                <div class="tags">
+                                                                    <a href="#">
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="product-name">
+                                                                    <a href="#">@item.Name</a>
+                                                                </div>
+
+                                                                <div class="product-price">
+                                                                    @if (item.DiscountPercent > 0)
+                                                                    {
+                                                                        <span class="price">
+                                                                            <span class="currency">$</span>
+                                                                            @item.SalePrice.ToString("#.00")
+                                                                        </span>
+                                                                        <span class="disc-price">
+                                                                            <span class="currency">$</span>
+                                                                            @((item.SalePrice * (1-item.DiscountPercent/100)).ToString("#.00"))
+                                                                        </span>
+                                                                    }
+
+                                                                    else
+                                                                    {
+                                                                        <span class="disc-price">
+                                                                            <span class="currency">$</span>
+                                                                            @item.SalePrice.ToString("#.00")
+                                                                        </span>
+                                                                    }
+
+
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="hover-info">
+                                                                <div class="stars">
+                                                                    <span>
+                                                                        <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                                                                    </span>
+                                                                </div>
+
+                                                                <div class="product-desc text-center">
+                                                                    <p>
+                                                                        @item.Description
+                                                                    </p>
+                                                                </div>
+
+                                                                <div class="buttons">
+                                                                    <a href="#">
+                                                                        <i class='bx bx-heart'></i>
+                                                                    </a>
+
+                                                                    <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket">
+                                                                        ADD TO CART
+                                                                    </a>
+
+                                                                    <a href="#">
+                                                                        <i class='bx bx-slider'></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                 aria-labelledby="pills-profile-tab">
+
+                                @foreach (var item in Model.PagenetedProduct)
+                                {
+                                    <div class="horizontal-product">
+                                        <div class="container p-0">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex">
+                                                    <div class="prod-image">
+                                                        <img class="image" src="/assets/image/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image" alt="">
+                                                        <img class="hover-image" src="/assets/image/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==false)?.Image"
+                                                             alt="">
+
+                                                        <div class="modal-discount d-flex justify-content-between align-items-center position-absolute">
+                                                            @if (item.DiscountPercent > 0)
+                                                            {
+                                                                <span style="left: 20px; position: absolute;">-@item.DiscountPercent.ToString("#")%</span>
+
+                                                            }
+                                                            <button style="left:190px;" type="button"
+                                                                    class="btn p-0 position-absolute" data-bs-toggle="modal"
+                                                                    data-bs-target="#exampleModal">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="prod-info">
+                                                        <div class="tags">
+                                                            <a href="#">
+                                                                Accessories,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                KeyBoard,
+                                                            </a>
+
+                                                            <a href="#">
+                                                                Mouse
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="product-name">
+                                                            <a href="#">@item.Name</a>
+                                                        </div>
+
+                                                        <div class="stars">
+                                                            <span>
+                                                                <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="product-price">
+                                                            @if (item.DiscountPercent > 0)
+                                                            {
+                                                                <span class="price">
+                                                                    <span class="currency">$</span>
+                                                                    @item.SalePrice.ToString("#.00")
+                                                                </span>
+
+                                                                <span class="disc-price">
+                                                                    <span class="currency">$</span>
+                                                                    @((item.SalePrice * (1 - item.DiscountPercent/100)).ToString("#.00"))
+                                                                </span>
+                                                            }
+
+                                                            else
+                                                            {
+                                                                <span class="disc-price">
+                                                                    <span class="currency">$</span>
+                                                                    @item.SalePrice.ToString("#.00")
+                                                                </span>
+                                                            }
+
+                                                        </div>
+
+                                                        <div class="product-desc">
+                                                            <p>
+                                                                @item.Description
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="buttons">
+
+                                                            <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="add-basket">
+                                                                ADD TO CARD
+                                                            </a>
+                                                            <a href="#">
+                                                                <i class='bx bx-heart'></i>
+                                                            </a>
+
+
+
+                                                            <a href="#">
+                                                                <i class='bx bx-slider'></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                 aria-labelledby="pills-contact-tab">...</div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+<!--Main end-->
+
+@section Scripts{
+    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/js/plugins.js"></script>
+    <script>
+                    $(function () {
+                        $(".sb-range-slider").slider({
+                            range: true,
+                            min: @ViewBag.MinPrice,
+                            max: @ViewBag.MaxPrice,
+                            values: [@ViewBag.SelectedMinPrice, @ViewBag.SelectedMaxPrice],
+                            slide: function (event, ui) {
+                                $("#amount").val("£" + ui.values[0] + " - £" + ui.values[1]);
+                            },
+                            change: function (event, ui) {
+                                console.log(ui.values[0] + ' - ' + ui.values[1])
+                                let url = new URL(window.location.href);
+                                let params = new URLSearchParams(url.search);
+                                params.set("minPrice", ui.values[0]);
+                                params.set("maxPrice", ui.values[1]);
+                                url.search = params;
+                                window.location = url.href;
+                            }
+                        });
+                        $("#amount").val("£" + $(".sb-range-slider").slider("values", 0) +
+                            " - £" + $(".sb-range-slider").slider("values", 1));
+                    });
+    </script>
+
+}

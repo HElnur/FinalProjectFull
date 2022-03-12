@@ -1,0 +1,259 @@
+#best-selling {
+    margin-top: 120px;
+    .options {
+        .title {
+            h3 {
+                font-size: 20px;
+                font-family: 'Rubik', sans-serif;
+                color: #242424;
+                font-weight: 500;
+                background-color: #FFFFFF;
+            }
+        }
+
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        ul {
+            height: 54px;
+            display: flex;
+            align-items: center;
+
+            li {
+                background-color: #FFFFFF;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+
+                button {
+                    font-size: 14px;
+                    color: #A4A4A4;
+                    font-family: 'Rubik', sans-serif;
+                    font-weight: 500;
+                }
+            }
+
+            .active {
+                background-color: #FFFFFF;
+                color: #242424;
+            }
+        }
+
+        &::before {
+            content: "";
+            top: 50%;
+            left: 0px;
+            right: 0px;
+            position: absolute;
+            border-bottom: 1px solid rgb(235, 235, 235);
+            z-index: -999 !important;
+        }
+
+
+    }
+
+    .owl-carousel {
+        .item {
+            .product {
+
+                .top-product,
+                .bottom-product {
+                    margin-bottom: 15px;
+
+                    .content {
+                        .card-image {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+
+
+                            .hover-image {
+                                position: absolute;
+                                opacity: 0;
+                                visibility: hidden;
+                            }
+
+                            .modal-discount {
+                                top: 10%;
+                                span {
+                                    padding: 4px;
+                                    color: #FFFFFF;
+                                    font-family: 'Rubik', sans-serif;
+                                    font-weight: 400;
+                                    border-radius: 0.2rem;
+                                    background-color: #0363CD;
+                                }
+
+                                button {
+                                    i {
+                                        color: #FFFFFF;
+                                        padding: 5px 10px;
+                                        background-color: #0363CD;
+                                        border-radius: 0.2rem;
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        transition: all .5s ease;
+                                    }
+                                }
+                            }
+                        }
+
+                        .card-text {
+                            display: flex;
+                            align-items: center;
+
+                            .tags {
+                                margin-bottom: 10px;
+
+                                a {
+                                    font-size: 12.992px;
+                                    color: #A4A4A4;
+                                    font-family: 'Rubik', sans-serif;
+                                    text-decoration: none;
+                                }
+                            }
+
+                            .product-name {
+                                margin-bottom: 10px;
+
+                                h3 {
+                                    font-size: 14px;
+                                    font-family: 'Rubik', sans-serif;
+                                    color: #242424;
+
+                                }
+                            }
+
+                            .price {
+                                margin-bottom: 10px;
+
+                                span {
+                                    font-size: 14px;
+                                    font-family: 'Rubik', sans-serif;
+                                    color: #A4A4A4;
+                                }
+                            }
+
+                            .add-cart-wishlist {
+                                display: flex;
+                                align-items: center;
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: all .5s ease;
+
+                                .add-cart {
+                                    text-decoration: none;
+                                    font-family: 'Rubik', sans-serif;
+                                    font-size: 12px;
+                                    color: #363F4D;
+                                    padding: 10px 15px;
+                                    font-weight: 500;
+                                    border-radius: 0.3rem;
+                                    background-color: #EEF0F1;
+                                    transition: all .3s ease;
+
+                                    &:hover {
+                                        background-color: #0363CD;
+                                        color: #FFFFFF;
+                                    }
+                                }
+
+                                .wishlist {
+                                    margin-left: 3px;
+                                    text-decoration: none;
+                                    font-family: 'Rubik', sans-serif;
+                                    font-size: 12px;
+                                    color: #363F4D;
+                                    font-weight: 500;
+                                    border-radius: 0.3rem;
+                                    background-color: #EEF0F1;
+                                    transition: all .3s ease;
+
+                                    &:hover {
+                                        background-color: #0363CD;
+                                        color: #FFFFFF;
+                                    }
+
+                                    i {
+                                        font-size: 20px;
+                                        padding: 6px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .hover-image {
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                        }
+
+                        .image {
+                            opacity: 0 !important;
+                            visibility: hidden !important;
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                        .card-image {
+                            button {
+                                i {
+                                    opacity: 1 !important;
+                                    visibility: visible !important;
+                                }
+                            }
+                        }
+
+                        .card-text {
+                            .add-cart-wishlist {
+                                opacity: 1 !important;
+                                visibility: visible !important;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .owl-nav {
+        position: absolute;
+        left: 92%;
+        top: -108px;
+        background-color: #FFFFFF;
+
+        .owl-prev {
+            background-color: #EFEFEF;
+            width: 35px;
+            height: 35px;
+            padding: 10px;
+            border-radius: 0.2rem;
+            font-family: 'Rubik', sans-serif;
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: #0363CD !important;
+            }
+
+        }
+
+        .owl-next {
+            background-color: #EFEFEF;
+            width: 35px;
+            height: 35px;
+            padding: 10px;
+            border-radius: 0.2rem;
+            font-family: 'Rubik', sans-serif;
+
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: #0363CD !important;
+            }
+        }
+    }
+}

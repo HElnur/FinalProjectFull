@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "SignIn";
+}
+
+@model MemberSignInViewModel;
+
+<div id="sign-in">
+    <div class='box'>
+        <div class='col-1'>
+
+        </div>
+        <div class='col-2'>
+            <div class='form'>
+
+                <form asp-action="signin">
+                    <div class='form-box'>
+                        <label>Username</label>
+                        <input asp-for="UserName" autocomplete="off" placeholder='Enter username'>
+
+                    </div>
+
+                    <div class='form-box'>
+                        <label>Password</label>
+                        <input type='password' asp-for="Password" autocomplete="off" placeholder='Enter password'>
+
+                    </div>
+                    <div class='reigster'>
+                        <a class='reset' asp-controller="account" asp-action="forgot">Forgot password?</a>
+                        <a class='create' asp-controller="account" asp-action="register">Register</a>
+
+                    </div>
+                    <button type="submit">
+                        LoGin
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+

@@ -1,0 +1,100 @@
+#profile-order {
+
+    .nav-pills {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        li {
+            button {
+                color: #0363CD;
+                font-size: 20px;
+                font-family: 'Rubik', sans-serif;
+                letter-spacing: 1px;
+            }
+
+            a {
+                color: #0363CD;
+                font-size: 20px;
+                font-family: 'Rubik', sans-serif;
+                letter-spacing: 1px;
+            }
+
+            .active {
+                color: #FFFFFF;
+                background-color: #0363CD;
+            }
+        }
+    }
+
+    #order {
+        .order {
+            margin-top: 30px;
+            margin-bottom: 100px;
+
+            .title {
+                background-color: #0363CD;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+
+                h3 {
+                    color: #FFFFFF;
+                    font-size: 35px;
+                    font-family: 'Rubik', sans-serif;
+                    padding: 25px;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .content {
+                height: 100%;
+                border: 5px solid #0363CD;
+
+
+
+            }
+        }
+
+        #product-table {
+            .prod-table {
+                font-family: 'Rubik', sans-serif;
+
+                margin-top: 30px;
+                margin-bottom: 30px;
+
+                thead {
+                    background-color: #F9F9F9;
+                    border: 1px solid #e6e3e3;
+                    text-align: center;
+
+                    th {
+                        padding: 10px;
+                    }
+                }
+
+                tbody {
+
+                    td {
+                        vertical-align: middle;
+
+
+
+                        span {
+                            background-color: green;
+                            padding: 2px;
+                            border-radius: 0.2rem;
+                        }
+                    }
+
+                    border-top: none;
+                    text-align: center;
+
+                    img {
+                        width: 75px;
+                        height: 75px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+    int count = 0;
+}
+
+@model ProfileViewModel;
+
+<div id="profile-order">
+    <!--Main start-->
+    <main>
+
+        <div class="container">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true">
+                        <i class="fas fa-address-card pe-3"></i>Profile
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">
+                        <i class="fas fa-lock pe-3"></i>Password
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">
+                        <i class="fas fa-truck pe-3"></i>Order
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a asp-controller="account" asp-action="logout" class="nav-link"><i class="fas fa-sign-out pe-3"></i>Log out</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    @await Html.PartialAsync("_MemberUpdateFormPartial", Model.Member)
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    @await Html.PartialAsync("_MemberUpdatePasswordPartial", Model.Member)
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    @*<section id="order">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="order">
+                                        <div class="title">
+                                            <h3><i class="fas fa-truck pe-3"></i>Order</h3>
+                                        </div>
+
+                                        <div class="content">
+                                            <section id="product-table">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="prod-table">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">IMAGES</th>
+                                                                        <th scope="col">PRODUCT</th>
+                                                                        <th scope="col">PRICE</th>
+                                                                        <th scope="col">QUANTITY</th>
+                                                                        <th scope="col">TOTAL</th>
+                                                                        <th scope="col">STATUS</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <img src="/assets/image/1-300x300.jpg" alt="">
+                                                                        </th>
+                                                                        <td>Handbag Lobortis</td>
+                                                                        <td>$111.00</td>
+                                                                        <td>1</td>
+                                                                        <td>$111.00</td>
+                                                                        <td><span>Delivered</span></td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>*@
+                    <section id="order">
+                        <div class="order">
+                            <div class="title">
+                                <h3><i class="fas fa-truck pe-3"></i>Order</h3>
+                            </div>
+                            <div class="content">
+                                <div class="container first-container col-sm-12 pull-left">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>#</th>
+                                                <th>Fullname</th>
+                                                <th>Date</th>
+                                                <th>Price</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Orders)
+                                            {
+                                                count++;
+                                                <tr class="sub-container">
+                                                    <td>
+                                                        <button type="button" class="btn exploder" style="background-color: #0363CD;">
+                                                            <i class="fas fa-search" style="color: #FFFFFF;"></i>
+                                                        </button>
+                                                    </td>
+                                                    <td>@count</td>
+                                                    <td>@item.FullName</td>
+                                                    <td>@item.CreatedAt</td>
+                                                    <td>@item.TotalAmount</td>
+                                                    <td>
+                                                        <span class="badge" style="background-color:@((int)(item.Status) == 1?"#F29339":"") @((int)(item.Status) == 2?"#5CB85C":"")  @((int)(item.Status) == 3?"red":"") @((int)(item.Status) == 4?"#cf142b":""); font-family: 'Rubik',sans-serif; font-weight:400;">
+
+                                                            @((int)(item.Status) == 1?"Pending":"") @((int)(item.Status) == 2?"Accepted":"")  @((int)(item.Status) == 3?"Rejected":"") @((int)(item.Status) == 4?"Canceled":"")
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <partial name="_OrderProductTablePartial" model="item"/>
+                                            }
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+    <!--Main end-->
+</div>
+

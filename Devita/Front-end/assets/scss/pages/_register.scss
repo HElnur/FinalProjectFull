@@ -1,0 +1,363 @@
+// #register {
+//     background: linear-gradient(90deg, rgba(3, 99, 205, 1) 0%, rgba(29, 169, 253, 1) 100%, rgba(255, 255, 255, 1) 100%);
+
+//     *,
+//     *::before,
+//     *::after {
+//         box-sizing: border-box;
+//     }
+
+//     .wrapper {
+//         margin: 0 auto;
+//         width: 100%;
+//         max-width: 1140px;
+//         min-height: 100vh;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         flex-direction: column;
+//     }
+
+//     .container {
+//         position: relative;
+//         width: 100%;
+//         max-width: 600px;
+//         height: auto;
+//         display: flex;
+//         background: #ffffff;
+//         box-shadow: 0 0 5px #999999;
+//     }
+
+//     .credit {
+//         position: relative;
+//         margin: 25px auto 0 auto;
+//         width: 100%;
+//         text-align: center;
+//         color: #666666;
+//         font-size: 16px;
+//         font-weight: 400;
+//     }
+
+//     .credit a {
+//         color: #222222;
+//         font-size: 16px;
+//         font-weight: 600;
+//     }
+
+//     .col-left,
+//     .col-right {
+//         padding: 30px;
+//         display: flex;
+//     }
+
+//     .col-left {
+//         width: 60%;
+//         -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+//         clip-path: polygon(0 0, 0% 100%, 100% 0);
+//         background: #0363CD;
+//     }
+
+//     .col-right {
+//         padding: 60px 30px;
+//         width: 50%;
+//         margin-left: -10%;
+//     }
+
+//     @media(max-width: 575.98px) {
+//         .container {
+//             flex-direction: column;
+//             box-shadow: none;
+//         }
+
+//         .col-left,
+//         .col-right {
+//             width: 100%;
+//             margin: 0;
+//             -webkit-clip-path: none;
+//             clip-path: none;
+//         }
+
+//         .col-right {
+//             padding: 30px;
+//         }
+//     }
+
+//     .login-text {
+//         position: relative;
+//         width: 100%;
+//         color: #ffffff;
+//     }
+
+//     .login-text h2 {
+//         margin: 0 0 15px 0;
+//         font-size: 30px;
+//         font-weight: 700;
+//     }
+
+//     .login-text p {
+//         margin: 0 0 20px 0;
+//         font-size: 16px;
+//         font-weight: 500;
+//         line-height: 22px;
+//     }
+
+//     .login-text .btn {
+//         display: inline-block;
+//         padding: 7px 20px;
+//         font-size: 16px;
+//         letter-spacing: 1px;
+//         text-decoration: none;
+//         border-radius: 30px;
+//         color: #ffffff;
+//         outline: none;
+//         border: 1px solid #ffffff;
+//         box-shadow: inset 0 0 0 0 #ffffff;
+//         transition: .3s;
+//         -webkit-transition: .3s;
+//     }
+
+//     .login-text .btn:hover {
+//         color: #0363CD;
+//         box-shadow: inset 150px 0 0 0 #ffffff;
+//     }
+
+//     .login-form {
+//         position: relative;
+//         width: 100%;
+//     }
+
+//     .login-form h2 {
+//         margin: 0 0 15px 0;
+//         font-size: 22px;
+//         font-weight: 700;
+//     }
+
+//     .login-form p {
+//         margin: 0 0 10px 0;
+//         text-align: left;
+//         color: #666666;
+//         font-size: 15px;
+//     }
+
+//     .login-form p:last-child {
+//         margin: 0;
+//         padding-top: 3px;
+//     }
+
+//     .login-form p a {
+//         color: #0363CD;
+//         font-size: 14px;
+//         text-decoration: none;
+//     }
+
+//     .login-form label {
+//         display: block;
+//         width: 100%;
+//         margin-bottom: 2px;
+//         letter-spacing: .5px;
+//     }
+
+//     .login-form p:last-child label {
+//         width: 60%;
+//         float: left;
+//     }
+
+//     .login-form label span {
+//         color: #ff574e;
+//         padding-left: 2px;
+//     }
+
+//     .login-form input {
+//         display: block;
+//         width: 100%;
+//         height: 35px;
+//         padding: 0 10px;
+//         outline: none;
+//         border: 1px solid #cccccc;
+//         border-radius: 30px;
+//     }
+
+//     .login-form input:focus {
+//         border-color: #ff574e;
+//     }
+
+//     .login-form button,
+//     .login-form input[type=submit] {
+//         display: inline-block;
+//         width: 100%;
+//         margin-top: 5px;
+//         color: #0363CD;
+//         font-size: 16px;
+//         letter-spacing: 1px;
+//         cursor: pointer;
+//         background: transparent;
+//         border: 1px solid #0363CD;
+//         border-radius: 30px;
+//         box-shadow: inset 0 0 0 0 #0363CD;
+//         transition: .3s;
+//         -webkit-transition: .3s;
+//     }
+
+//     .login-form button:hover,
+//     .login-form input[type=submit]:hover {
+//         color: #ffffff;
+//         box-shadow: inset 250px 0 0 0 #0363CD;
+//     }
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+$squada:'Squada One',
+cursive;
+
+#register {
+    background: #ebebeb;
+}
+
+.box {
+
+    &:hover {
+        -webkit-box-shadow: -10px 15px 0px 3px #0363CD;
+        box-shadow: -10px 15px 0px 3px #0363CD;
+
+    }
+
+    margin: 50px auto;
+    width:800px;
+    border:solid 1px black;
+    height:700px;
+    transition:0.3s ease;
+    position:relative;
+    background:white;
+
+    &:hover>.col-1 {
+        transform: translateX(100%);
+
+    }
+
+    &:hover>.col-2 {
+        transform: translateX(-100%);
+    }
+
+    .col-1 {
+        background-image: url('./pexels-thisisengineering-3913025.jpg');
+        background-position: center;
+        background-size: cover;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ease;
+        position: absolute;
+
+        .msg-box {
+            padding: 5px 0;
+            background-color: black;
+            width: 100%;
+            text-align: center;
+            font-size: 55px;
+            color: #0363CD;
+            text-shadow: 5px 5px 7px #1a1919;
+            font-family: $squada;
+            transform: rotate(-25deg);
+
+        }
+    }
+
+    .col-2 {
+        right: 0;
+        padding: 20px 0 -20px 0;
+        position: absolute;
+        width: 50%;
+        height: 100%;
+
+        transition: 0.3s ease;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 1000px;
+
+    form {
+        height: 1000px;
+        width: 80%;
+
+        .reigster {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 15px;
+
+            .reset {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            .create {
+                color: #0363CD;
+                cursor: pointer;
+            }
+        }
+
+        button {
+            margin-top: 100px;
+            width: 100%;
+            padding: 10px 18px;
+            background-color: #0363CD;
+            border: none;
+            font-size: 20px;
+            font-family: $squada;
+            position: relative;
+            transition: 0.3s linear;
+
+            &:hover {
+
+                color: white
+            }
+        }
+
+        .form-box {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            label {
+                font-family: $squada;
+                font-size: 30px;
+            }
+
+            input {
+                outline: none;
+                padding: 7px 18px;
+                border: 3px solid #0363CD;
+                transition: 0.1s linear;
+
+                &:focus {
+                    border: solid 3px black;
+                    animation: dropColor 1s infinite;
+                }
+
+            }
+        }
+    }
+}
+
+@keyframes dropColor {
+    from {
+        -webkit-box-shadow: -10px 15px 0px 3px #0363CD;
+        box-shadow: -10px 15px 0px 3px #0363CD;
+    }
+
+    to {
+        -webkit-box-shadow: -10px 15px 0px 3px #0363CD;
+        box-shadow: -10px 15px 0px 3px #0363CD;
+    }
+}

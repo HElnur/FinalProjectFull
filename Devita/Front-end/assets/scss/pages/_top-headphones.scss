@@ -1,0 +1,536 @@
+#top-headphones {
+    margin-top: 120px;
+
+    .options {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .title {
+            background-color: #FFFFFF;
+            h3 {
+                font-size: 20px;
+                font-family: 'Rubik', sans-serif;
+                color: #242424;
+                font-weight: 500;
+            }
+        }
+
+        ul {
+            height: 54px;
+            display: flex;
+            align-items: center;
+
+            li {
+                z-index: 999 !important;
+                background-color: #FFFFFF;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+
+                button {
+                    font-size: 17.99px;
+                    color: #242424;
+                    font-family: 'Rubik', sans-serif;
+                    font-weight: 700;
+                }
+            }
+
+            .active {
+                background-color: #FFFFFF;
+                border: 2px solid #0363CD;
+                color: #0363CD;
+            }
+        }
+
+        &::before {
+            content: "";
+            top: 50%;
+            left: 0px;
+            right: 0px;
+            position: absolute;
+            border-bottom: 1px solid rgb(235, 235, 235);
+            z-index: -999 !important;
+        }
+
+
+    }
+
+    .tab-content {
+        .fade:not(.show) {
+            display: none;
+        }
+    }
+
+    // Owl carousel
+
+    .owl-carousel {
+        .item {
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            .product {
+
+                .top-product {
+                    .content {
+                        .card-image {
+                            position: relative;
+
+                            .image {
+                                position: relative;
+                            }
+
+                            .hover-image {
+                                position: absolute;
+                                opacity: 0;
+                                visibility: hidden;
+                            }
+
+
+                            .modal-discount {
+                                top: 10%;
+
+                                span {
+                                    padding: 4px;
+                                    color: #FFFFFF;
+                                    font-family: 'Rubik', sans-serif;
+                                    font-weight: 400;
+                                    border-radius: 0.2rem;
+                                    background-color: #0363CD;
+                                }
+
+                                button {
+                                    i {
+                                        color: #FFFFFF;
+                                        padding: 5px 10px;
+                                        background-color: #0363CD;
+                                        border-radius: 0.2rem;
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        transition: all .5s ease;
+                                    }
+                                }
+                            }
+                        }
+
+                        .card-text {
+                            height: 80px;
+
+                            .tags {
+                                display: flex;
+                                justify-content: center;
+
+                                a {
+                                    text-decoration: none;
+                                    color: #a4a4a4;
+                                    font-size: 14px;
+                                    font-family: 'Rubik', sans-serif;
+                                    padding: 3px;
+                                    transition: all .3s ease;
+
+                                    &:hover {
+                                        color: #0363CD;
+                                    }
+                                }
+                            }
+
+                            .product-name {
+                                display: flex;
+                                justify-content: center;
+
+                                a {
+                                    text-decoration: none;
+                                    color: #242424;
+                                    font-size: 15px;
+                                    font-family: 'Rubik', sans-serif;
+                                    font-weight: 600;
+                                    padding-top: 8px;
+                                    transition: all .3s ease;
+
+                                    &:hover {
+                                        color: #0363CD;
+                                    }
+                                }
+
+                            }
+
+                            .product-price {
+                                display: flex;
+                                justify-content: center;
+                                font-size: 13.5px;
+                                color: #a4a4a4;
+                                font-family: 'Rubik', sans-serif;
+                                margin-top: 10px;
+
+                                .price {
+                                    text-decoration: line-through;
+
+                                    padding-right: 10px;
+                                }
+
+                            }
+
+                        }
+
+
+
+
+                    }
+
+
+
+
+
+                    &:hover {
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+                        .hover-info {
+                            top: 0 !important;
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                        }
+
+                        .modal-discount {
+                            button {
+                                i {
+                                    opacity: 1 !important;
+                                    visibility: visible !important;
+                                }
+                            }
+                        }
+
+                        .image {
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+
+                        .hover-image {
+                            position: absolute;
+                            top: 0;
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                        }
+                    }
+
+                    .hover-info {
+                        display: block;
+                        position: relative;
+                        top: -130px;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all .5s ease;
+
+
+                        .stars {
+                            display: flex;
+                            justify-content: center;
+                            color: #0363CD;
+
+                            span {
+                                background-color: #FFFFFF;
+                            }
+
+                            &::before {
+                                content: "";
+                                z-index: -333 !important;
+                                top: 6%;
+                                left: 0px;
+                                right: 0px;
+                                position: absolute;
+                                border-bottom: 1px solid #d3ced2;
+                            }
+                        }
+
+
+
+                        .product-desc {
+                            display: flex;
+                            justify-content: center;
+
+                            p {
+                                font-size: 12px;
+                                font-family: 'Rubik', sans-serif;
+                                color: #a4a4a4;
+                                font-weight: 400;
+                                line-height: 20px;
+                                padding: 5px;
+                            }
+                        }
+
+                        .buttons {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 5px 10px;
+
+                            a {
+                                text-decoration: none;
+                                padding: 5px 5px;
+                                background-color: #eef0f1;
+                                color: #a4a4a4;
+                                font-family: 'Rubik', sans-serif;
+                                border-radius: 0.2rem;
+
+                                i {
+                                    font-size: 20px;
+                                }
+
+                                transition: all .3s ease;
+
+                                &:hover {
+                                    background-color: #0363CD;
+                                    color: #FFFFFF;
+
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+
+            }
+
+
+        }
+    }
+
+    .owl-nav {
+        position: absolute;
+        left: 92%;
+        top: -108px;
+        background-color: #FFFFFF;
+
+        .owl-prev {
+            background-color: #EFEFEF;
+            width: 35px;
+            height: 35px;
+            padding: 10px;
+            border-radius: 0.2rem;
+            font-family: 'Rubik', sans-serif;
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: #0363CD !important;
+            }
+
+        }
+
+        .owl-next {
+            background-color: #EFEFEF;
+            width: 35px;
+            height: 35px;
+            padding: 10px;
+            border-radius: 0.2rem;
+            font-family: 'Rubik', sans-serif;
+
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: #0363CD !important;
+            }
+        }
+    }
+
+    .top-rate {
+        display: flex;
+        justify-content: center;
+
+        .product {
+            .top-product {
+                .content {
+                    .card-image {
+                        position: relative;
+
+                        .image {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .hover-image {
+                            position: absolute;
+                            opacity: 0;
+                            visibility: hidden;
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                        }
+
+
+                        .discount {
+                            position: absolute;
+                            color: #FFFFFF;
+                            font-family: 'Rubik', sans-serif;
+                            top: 6px;
+                            left: 10px;
+                            background-color: #0363CD;
+                            padding: 4px;
+                            border-radius: 0.2rem;
+                        }
+                    }
+
+                    .card-text {
+                        height: 80px;
+
+                        .tags {
+                            display: flex;
+                            justify-content: center;
+
+                            a {
+                                text-decoration: none;
+                                color: #a4a4a4;
+                                font-size: 14px;
+                                font-family: 'Rubik', sans-serif;
+                                padding: 3px;
+                                transition: all .3s ease;
+
+                                &:hover {
+                                    color: #0363CD;
+                                }
+                            }
+                        }
+
+                        .product-name {
+                            display: flex;
+                            justify-content: center;
+
+                            a {
+                                text-decoration: none;
+                                color: #242424;
+                                font-size: 15px;
+                                font-family: 'Rubik', sans-serif;
+                                font-weight: 600;
+                                padding-top: 8px;
+                                transition: all .3s ease;
+
+                                &:hover {
+                                    color: #0363CD;
+                                }
+                            }
+
+                        }
+
+                        .product-price {
+                            display: flex;
+                            justify-content: center;
+                            font-size: 13.5px;
+                            color: #a4a4a4;
+                            font-family: 'Rubik', sans-serif;
+                            margin-top: 10px;
+
+                            .price {
+                                text-decoration: line-through;
+
+                                padding-right: 10px;
+                            }
+
+                        }
+
+                    }
+
+                    .hover-info {
+                        display: block;
+                        position: relative;
+                        top: -130px;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all .5s ease;
+
+
+                        .stars {
+                            display: flex;
+                            justify-content: center;
+                            color: #0363CD;
+
+                            span {
+                                background-color: #FFFFFF;
+                            }
+
+                            &::before {
+                                content: "";
+                                z-index: -333 !important;
+                                top: 6%;
+                                left: 0px;
+                                right: 0px;
+                                position: absolute;
+                                border-bottom: 1px solid #d3ced2;
+                            }
+                        }
+
+
+
+                        .product-desc {
+                            display: flex;
+                            justify-content: center;
+
+                            p {
+                                font-size: 12px;
+                                font-family: 'Rubik', sans-serif;
+                                color: #a4a4a4;
+                                font-weight: 400;
+                                line-height: 20px;
+                                padding: 5px;
+                            }
+                        }
+
+                        .buttons {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 5px 10px;
+
+                            a {
+                                text-decoration: none;
+                                padding: 5px 5px;
+                                background-color: #eef0f1;
+                                color: #a4a4a4;
+                                font-family: 'Rubik', sans-serif;
+                                border-radius: 0.2rem;
+
+                                i {
+                                    font-size: 20px;
+                                }
+
+                                transition: all .3s ease;
+
+                                &:hover {
+                                    background-color: #0363CD;
+                                    color: #FFFFFF;
+
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+
+                &:hover {
+                    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+
+                    .hover-info {
+                        top: 0 !important;
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                    }
+
+                    .image {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    .hover-image {
+                        position: absolute;
+                        top: 0;
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                    }
+                }
+            }
+
+        }
+    }
+
+}
