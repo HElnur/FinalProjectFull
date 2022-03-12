@@ -29,7 +29,9 @@ namespace Devita.Controllers
                 BestProducts = _context.Products.Include(x => x.ProductImages).Where(x => x.IsBest).ToList(),
                 TopHeadphonesProduct = _context.Products.Include(x => x.ProductImages).Where(x => x.IsTopHeadphone).ToList(),
                 TopRates = _context.Products.Include(x => x.ProductImages).Where(x => x.IsTopRate).ToList(),
-                Sliders = _context.Sliders.ToList()
+                Sliders = _context.Sliders.ToList(),
+                Wrappers = _context.Wrappers.ToList(),
+                HomeStatics = _context.HomeStatics.ToList()
             };
             return View(homeVM);
         }

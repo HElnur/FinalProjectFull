@@ -8948,11 +8948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\husey\\Desktop\\Devita\\Back-end\\Devita\\Devita\\Devita.csproj",
+      "projectUniqueName": "C:\\Users\\husey\\Desktop\\FinalProjectFull\\Devita\\Back-end\\Devita\\Devita\\Devita.csproj",
       "projectName": "Devita",
-      "projectPath": "C:\\Users\\husey\\Desktop\\Devita\\Back-end\\Devita\\Devita\\Devita.csproj",
+      "projectPath": "C:\\Users\\husey\\Desktop\\FinalProjectFull\\Devita\\Back-end\\Devita\\Devita\\Devita.csproj",
       "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\husey\\Desktop\\Devita\\Back-end\\Devita\\Devita\\obj\\",
+      "outputPath": "C:\\Users\\husey\\Desktop\\FinalProjectFull\\Devita\\Back-end\\Devita\\Devita\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\husey\\AppData\\Roaming\\NuGet\\NuGet.Config",

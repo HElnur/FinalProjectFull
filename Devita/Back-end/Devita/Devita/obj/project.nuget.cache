@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yf0d5rpVTB6dHO28+PvDvlflYM0C/BJqR7OFy0Gq+p0byq+mN+MpNmLSECwlgQm7zceo6fsQK5wkXLUm/rTIUQ==",
+  "dgSpecHash": "g/8b6a+tG2LCsW+GhATJj5lL/FwCNRk7pgLy6HMN0fhcd23esZUZNhvNUqEOlKi6L9gugB6AhKbKD3N4N1647w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\husey\\Desktop\\Devita\\Back-end\\Devita\\Devita\\Devita.csproj",
+  "projectFilePath": "C:\\Users\\husey\\Desktop\\FinalProjectFull\\Devita\\Back-end\\Devita\\Devita\\Devita.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\husey\\.nuget\\packages\\mailkit\\3.1.1\\mailkit.3.1.1.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.22\\microsoft.aspnetcore.cryptography.internal.3.1.22.nupkg.sha512",

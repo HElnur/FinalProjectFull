@@ -36,16 +36,24 @@
                                 <span class="text-danger" asp-validation-for="ImageFile"></span>
                             </div>
 
-                            <div class="img-box d-flex flex-column justify-content-center" style="width: 20%;">
-                                <input type="hidden" name="Image" value="@Model.Image" />
-                                <img width="150" height="150" src="~/uploads/slider/@Model.Image" alt="Alternate Text" />
-                                <a class="d-flex justify-content-center img-box-remove" data-id="@Model.Id" style="width: 68%; background-color: red; color: #FFFFFF; font-size: 18px;"><i class="fas fa-trash-alt py-2"></i></a>
-                            </div>
+
+                            @if (Model.Image != null)
+                            {
+                                <div class="img-box d-flex flex-column justify-content-center" style="width: 20%;">
+                                    <input type="hidden" name="Image" value="@Model.Image" />
+                                    <img width="150" height="150" src="~/uploads/slider/@Model.Image" alt="Alternate Text" />
+                                    <a class="d-flex justify-content-center img-box-remove" data-id="@Model.Id" style="width: 68%; background-color: red; color: #FFFFFF; font-size: 18px;"><i class="fas fa-trash-alt py-2"></i></a>
+                                </div>
+                            }
+
+
+
+
 
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit">Edit</button>
+                            <button type="submit" style="background-color: #4885ED; border: none; box-shadow: none; font-family: 'Rubik' , sans-serif; font-weight: 500; font-size: 20px; padding: 8px 10px; border-radius: 0.5rem; color: #FFFFFF;">Edit</button>
                         </div>
 
                     </div>

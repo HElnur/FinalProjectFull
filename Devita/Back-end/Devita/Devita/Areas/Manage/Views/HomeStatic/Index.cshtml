@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    var count = 0;
+}
+
+@model List<HomeStatic>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h4 class="card-title">Home static datatable</h4>
+                    <a asp-controller="homestatic" asp-action="create" style="background-color: #4885ED; border-radius: 0.5rem; padding: 10px 5px; font-family: 'Rubik' , sans-serif; color: #FFFFFF; font-weight: 400;">Create new</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example3" class="display" style="min-width: 845px">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Background-image</th>
+                                    <th>Button</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td>@item.Title</td>
+                                    <td><img width="150" src="~/uploads/homestatic/@item.BgImage" alt=""></td>
+                                    <td>@item.ButtonText</td>
+
+
+                                    <td>
+                                        <div class="d-flex">
+                                            <a asp-controller="slider" asp-action="edit" asp-route-Id="@item.Id" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                            <a asp-controller="slider" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+}

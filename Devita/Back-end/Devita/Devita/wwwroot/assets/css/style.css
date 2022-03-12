@@ -1214,7 +1214,7 @@ header .bottom-header nav .navbar-menu .shop {
             }
 
 #home-static {
-    background-image: url("/assets/image/home-static.jpg");
+    
     height: 494.05px;
     background-size: 100% 100%;
 }
@@ -1239,6 +1239,7 @@ header .bottom-header nav .navbar-menu .shop {
             font-family: 'Rubik', sans-serif;
             color: #242424;
             font-weight: 200;
+            padding-right: 200px;
         }
 
     #home-static .text .price {

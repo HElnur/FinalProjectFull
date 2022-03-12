@@ -14,5 +14,7 @@ namespace Devita.ViewModels
         public List<Product> TopHeadphonesProduct { get; set; }
         public List<Product> TopRates { get; set; }
         public List<Slider> Sliders { get; set; }
+        public List<Wrapper> Wrappers { get; set; }
+        public List<HomeStatic> HomeStatics { get; set; }
     }
 }

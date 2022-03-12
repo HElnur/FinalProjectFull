@@ -27,6 +27,8 @@ namespace Devita.Models
         public DbSet<ProductComment> ProductComments { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Wrapper> Wrappers { get; set; }
+        public DbSet<HomeStatic> HomeStatics { get; set; }
+
 
     }
 }

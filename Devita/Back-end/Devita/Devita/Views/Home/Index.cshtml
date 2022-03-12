@@ -128,15 +128,19 @@
     <section id="wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 col-md-12 p-0 position-relative">
-                    <img src="/assets/image/wrapper_1.jpg" alt="">
-                    <div class="hover-box position-absolute"></div>
-                </div>
-                <div class="col-lg-6 col-md-12 p-0 position-relative">
-                    <img src="/assets/image/wrapper_2.jpg" alt="">
-                    <div class="hover-box position-absolute"></div>
+                @foreach (var item in Model.Wrappers)
+                {
+                    <div class="col-lg-6 col-md-12 p-0 position-relative">
+                        <img src="~/uploads/wrapper/@item.Image1" alt="">
+                        <div class="hover-box position-absolute"></div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 p-0 position-relative">
+                        <img src="~/uploads/wrapper/@item.Image2" alt="">
+                        <div class="hover-box position-absolute"></div>
 
-                </div>
+                    </div>
+                }
+
             </div>
         </div>
     </section>
@@ -194,41 +198,41 @@
     </section>
     <!--Products end-->
     <!--Home static start-->
-    <section id="home-static" class="d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="text">
-                        <div class="title">
-                            <h3>
-                                Stay Connected When You’re Away
-                                <br>
-                                From Your Phone
-                            </h3>
-                        </div>
+    @foreach (var item in Model.HomeStatics)
+    {
+        <section id="home-static" class="d-flex align-items-center mb-5" style="background-image: url('/assets/image/home-static.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="text">
+                            <div class="title">
+                                <h3>
+                                    @item.Title
+                                </h3>
+                            </div>
 
-                        <div class="desc">
-                            <p>
-                                Start the year off strong and explore how to track your activities,
-                                <br>
-                                health, and fitness with Apple Watch and iPhone.
-                            </p>
-                        </div>
+                            <div class="desc">
+                                <p>
+                                    @item.Desc
+                                </p>
+                            </div>
 
-                        <div class="price">
-                            <span>$128.00</span>
-                        </div>
+                            <div class="price">
+                                <span>$@item.Price.ToString("#.00")</span>
+                            </div>
 
-                        <div class="discoverBtn">
-                            <a href="#">
-                                DISCOVER NOW
-                            </a>
+                            <div class="discoverBtn">
+                                <a href="@item.ButtonUrl">
+                                    @item.ButtonText
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    }
     <!--Home static end-->
     <!--Best selling products start-->
     <section id="best-selling">

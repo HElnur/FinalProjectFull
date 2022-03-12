@@ -76,6 +76,45 @@ namespace Devita.Migrations
                     b.ToTable("Colors");
                 });
 
+            modelBuilder.Entity("Devita.Models.HomeStatic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BgImage")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("ButtonText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("ButtonUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(400)")
+                        .HasMaxLength(400);
+
+                    b.Property<string>("Desc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(60)")
+                        .HasMaxLength(60);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HomeStatics");
+                });
+
             modelBuilder.Entity("Devita.Models.Order", b =>
                 {
                     b.Property<int>("Id")

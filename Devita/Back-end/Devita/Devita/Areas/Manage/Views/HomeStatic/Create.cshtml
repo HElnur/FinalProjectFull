@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model HomeStatic
+<head>
+    <style>
+        label {
+            font-size: 20px;
+            color: #4885ED;
+            font-family: 'Rubik' , sans-serif;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-xxl-12">
+                <form asp-action="create" method="post" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Create new home static</h4>
+                        </div>
+                        <div class="card-body">
+                           
+
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label" asp-for="Title">Title</label>
+                                <input asp-for="Title" class="form-control" placeholder="Title">
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label" asp-for="Desc">Description</label><br />
+                                <textarea asp-for="Desc" cols="80" rows="5" placeholder="Description"></textarea>
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label" asp-for="Price">Price</label>
+                                <input asp-for="Price" class="form-control" placeholder="Price">
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label" asp-for="ButtonText">Button text</label>
+                                <input asp-for="ButtonText" class="form-control" placeholder="Button text">
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label" asp-for="ButtonUrl">Button URL</label>
+                                <input asp-for="ButtonUrl" class="form-control" placeholder="Button URL">
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <label asp-for="BgImageFile" style="font-family: 'Rubik', sans-serif; color: #4885ED; font-weight: 400; font-size: 18px;">Background image</label>
+                                <input asp-for="BgImageFile" />
+                                <span class="text-danger" asp-validation-for="BgImageFile"></span>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" style="background-color: #4885ED; border: none; box-shadow: none; font-family: 'Rubik' , sans-serif; font-weight: 500; font-size: 20px; padding: 8px 10px; border-radius: 0.5rem; color: #FFFFFF;">Create</button>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
