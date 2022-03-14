@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    var count = 0;
+}
+
+@model List<Product>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h4 class="card-title">Product datatable</h4>
+                    <a asp-controller="product" asp-action="create" style="background-color: #4885ED; border-radius: 0.5rem; padding: 10px 5px; font-family: 'Rubik' , sans-serif; color: #FFFFFF; font-weight: 400;">Create new</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example3" class="display" style="min-width: 845px">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Poster image</th>
+                                    <th>Category</th>
+                                    <th>Cost price</th>
+                                    <th>Sale price</th>
+                                    <th>Discount</th>
+
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.Name</td>
+                                        <td><img width="100" src="~/uploads/products/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image" /></td>
+                                        <td>@item.Category.Name</td>
+                                        <td>@item.CostPrice.ToString("#.00")</td>
+                                        <td>@item.SalePrice.ToString("#.00")</td>
+                                        <td>
+                                            @if (item.DiscountPercent > 0)
+                                            {
+                                                @item.DiscountPercent.ToString("#")
+                                            }
+
+                                            else
+                                            {
+                                                <span>0</span>
+                                            }
+                                        </td>
+
+
+                                        <td>
+                                            <div class="d-flex">
+                                                <a asp-controller="product" asp-action="comments" asp-route-Id="@item.Id" class="btn shadow btn-xs sharp me-1" style="background-color: #25D366;"><i class="fas fa-comments" style="color: white;"></i></a>
+                                                <a asp-controller="product" asp-action="edit" asp-route-Id="@item.Id" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                <a asp-controller="slider" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+}
+

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\uploads\homestatic\" />
+    <Folder Include="wwwroot\uploads\products\" />
     <Folder Include="wwwroot\uploads\wrapper\" />
   </ItemGroup>
 

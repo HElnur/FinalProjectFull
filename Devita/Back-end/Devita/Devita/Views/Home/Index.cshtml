@@ -19,15 +19,15 @@
             @foreach (var item in Model.Sliders)
             {
                 count++;
-                <div class="carousel-item d-flex align-items-center active" style="background-image: url('/uploads/slider/@item.BgImage');">
+                <div class="carousel-item d-flex align-items-center @(count==1 ? "active" : "")" style="background-image: url('/uploads/slider/@item.BgImage');">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 d-flex align-items-center">
-                                <div class="text">
+                                <div class="text" style="color: white;">
 
+                                    @Html.Raw(item.Text)
 
-
-                                    <div class="shoppingBtn">
+                                    <div class="shoppingBtn mt-5">
                                         <a href="#">Shopping now</a>
                                     </div>
 
@@ -200,7 +200,7 @@
     <!--Home static start-->
     @foreach (var item in Model.HomeStatics)
     {
-        <section id="home-static" class="d-flex align-items-center mb-5" style="background-image: url('/assets/image/home-static.jpg');">
+        <section id="home-static" class="d-flex align-items-center mb-5" style="background-image: url('/uploads/homestatic/@item.BgImage');">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">

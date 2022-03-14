@@ -385,4 +385,10 @@ C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Wrapper\Edit.cshtml.g.cs
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\HomeStatic\Index.cshtml.g.cs
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\HomeStatic\Create.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\HomeStatic\Edit.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\HomeStatic\Delete.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Index.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Create.cshtml.g.cs
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Devita.csproj.AssemblyReference.cache
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Edit.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Comments.cshtml.g.cs

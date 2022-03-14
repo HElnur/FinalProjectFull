@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@model HomeStatic
+
+<head>
+    <style>
+        .content-body {
+            min-height: 100% !important;
+        }
+    </style>
+
+
+</head>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"><i class="fas fa-text"></i>Title</h4>
+                </div>
+
+                <div class="card-body">
+                    <p style="font-size: 18px; color:#000000; font-family: 'Rubik' , sans-serif;">@Model.Title</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"><i class="fas fa-text"></i>Description</h4>
+                </div>
+
+                <div class="card-body">
+                    <p style="font-size: 18px; color:#000000; font-family: 'Rubik' , sans-serif;">@Model.Desc</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"><i class="fas fa-text"></i>Price</h4>
+                </div>
+
+                <div class="card-body">
+                    <p style="font-size: 18px; color:#000000; font-family: 'Rubik' , sans-serif;">@Model.Price</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"><i class="fas fa-text"></i>Button text</h4>
+                </div>
+
+                <div class="card-body">
+                    <p style="font-size: 18px; color:#000000; font-family: 'Rubik' , sans-serif;">@Model.ButtonText</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"><i class="fas fa-text"></i>Button URL</h4>
+                </div>
+
+                <div class="card-body">
+                    <p style="font-size: 18px; color:#000000; font-family: 'Rubik' , sans-serif;">@Model.ButtonUrl</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content-body" style="padding-top: 30px !important;">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h4 class="card-title" style="color: #4885ED; font-size: 20px; font-weight: 500; font-family: 'Rubik' , sans-serif;">Background image</h4>
+                </div>
+
+                <div class="card-body">
+                    <img src="~/uploads/slider/@Model.BgImage" width="1100" height="150" />
+                </div>
+
+                <div class="card-footer d-flex justify-content-end">
+                    <form asp-action="delete" method="post">
+                        <input name="Id" value="@Model.Id" type="hidden" />
+                        <button type="submit" style="padding: 10px; background-color: red; border-radius: 0.5rem; color: #FFFFFF; font-family: 'Rubik' , sans-serif; font-weight: 400; font-size: 16px;">Delete</button>
+                    </form>
+                    <a style="padding: 10px; background-color: #4885ED; border-radius: 0.5rem; color: #FFFFFF; font-family: 'Rubik', sans-serif; font-weight: 400; font-size: 16px;" asp-controller="slider" asp-action="index">Go to back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -21,6 +21,7 @@ namespace Devita.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal SalePrice { get; set; }
         [Column(TypeName = "decimal(18,2)")]
+        [Range(0,100)]
         public decimal  DiscountPercent { get; set; }
         public bool StockStatus { get; set; }
         public bool IsNew { get; set; }

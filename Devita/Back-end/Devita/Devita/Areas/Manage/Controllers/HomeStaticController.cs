@@ -120,5 +120,37 @@ namespace Devita.Areas.Manage.Controllers
 
             return RedirectToAction("index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            HomeStatic hStatic = _context.HomeStatics.FirstOrDefault(x => x.Id == id);
+
+            if(hStatic==null)
+            {
+                return RedirectToAction("index", "error");
+            }
+
+            return View(hStatic);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(HomeStatic hStatic)
+        {
+            HomeStatic existStatic = _context.HomeStatics.FirstOrDefault(x => x.Id == hStatic.Id);
+
+            if (existStatic == null)
+            {
+                return RedirectToAction("index", "error");
+            }
+
+            FileManager.Delete(_env.WebRootPath, "uploads/slider", existStatic.BgImage);
+
+            _context.HomeStatics.Remove(existStatic);
+            _context.SaveChanges();
+
+            return RedirectToAction("index");
+        }
+
+
     }
 }

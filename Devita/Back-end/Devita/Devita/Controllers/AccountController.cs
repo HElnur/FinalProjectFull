@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -50,6 +51,8 @@ namespace Devita.Controllers
             {
                 return View();
             }
+
+            
 
             AppUser member = await _userManager.Users.FirstOrDefaultAsync(x => !x.IsAdmin && x.NormalizedUserName == memberVM.UserName.ToUpper());
 
@@ -150,7 +153,16 @@ namespace Devita.Controllers
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
             var url = Url.Action("resetpassword", "account", new { email = forgotVM.Email, token = token }, Request.Scheme);
 
-            _emailService.Send(forgotVM.Email, "ChangePassword", url);
+            string body = string.Empty;
+
+            using (StreamReader reader = new StreamReader("wwwroot/templateHtml/reset-password-email.html"))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{{url}}", url);
+            
+
+            _emailService.Send(forgotVM.Email, "ChangePassword", body);
             return RedirectToAction("SignIn", "account");
         }
 
