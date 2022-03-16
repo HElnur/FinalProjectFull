@@ -114,24 +114,37 @@ namespace Devita.Areas.Manage.Controllers
             if (slider.ImageFile != null)
             {
 
-                if(slider.ImageFile.Length > 2097152)
+                if (slider.ImageFile.Length > 2097152)
                 {
                     ModelState.AddModelError("ImageFile", "File size can not be more than 2MB!");
                     return View();
                 }
 
-                else if(slider.ImageFile.ContentType != "image/jpeg" && slider.ImageFile.ContentType != "image/png")
+                else if (slider.ImageFile.ContentType != "image/jpeg" && slider.ImageFile.ContentType != "image/png")
                 {
                     ModelState.AddModelError("ImageFile", "ContentType must be image/jpeg or image/png!");
                     return View();
                 }
-                FileManager.Delete(_env.WebRootPath, "uploads/slider", existSlider.Image);
-                existSlider.Image = FileManager.Save(_env.WebRootPath, "uploads/slider", slider.ImageFile);
+                
+                if(slider.Image != null)
+                {
+                    FileManager.Delete(_env.WebRootPath, "uploads/slider", existSlider.Image);
+                    existSlider.Image = FileManager.Save(_env.WebRootPath, "uploads/slider", slider.ImageFile);
+                }
             }
 
             else if (slider.Image == null)
             {
-                FileManager.Delete(_env.WebRootPath, "uploads/slider", existSlider.Image);
+
+                if(slider.ImageFile == null)
+                {
+                    FileManager.Delete(_env.WebRootPath, "uploads/slider", existSlider.Image);
+
+                    existSlider.Image = null;
+                }
+
+             
+                
 
             }
 

@@ -52,9 +52,17 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-12">
-
+                                <div class="col-lg-6">
                                     <select class="form-control" asp-for="CategoryId" asp-items="@new SelectList((List<Category>)ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))">
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <select class="form-control" asp-for="Colors">
+                                        @foreach (var color in Enum.GetValues(typeof(ColorProduct)))
+                                        {
+                                            <option value="@((int)color)">@color</option>
+                                        }
                                     </select>
                                 </div>
                             </div>

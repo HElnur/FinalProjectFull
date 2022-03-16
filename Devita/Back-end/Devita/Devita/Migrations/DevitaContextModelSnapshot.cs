@@ -71,7 +71,12 @@ namespace Devita.Migrations
                     b.Property<int>("Name")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ProductColorId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductColorId");
 
                     b.ToTable("Colors");
                 });
@@ -274,16 +279,13 @@ namespace Devita.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ColorId")
+                    b.Property<int>("Color")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ColorId")
-                        .IsUnique();
 
                     b.HasIndex("ProductId");
 
@@ -653,6 +655,13 @@ namespace Devita.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Devita.Models.Color", b =>
+                {
+                    b.HasOne("Devita.Models.ProductColor", "ProductColor")
+                        .WithMany()
+                        .HasForeignKey("ProductColorId");
+                });
+
             modelBuilder.Entity("Devita.Models.Order", b =>
                 {
                     b.HasOne("Devita.Models.AppUser", "AppUser")
@@ -686,12 +695,6 @@ namespace Devita.Migrations
 
             modelBuilder.Entity("Devita.Models.ProductColor", b =>
                 {
-                    b.HasOne("Devita.Models.Color", "Color")
-                        .WithOne("ProductColor")
-                        .HasForeignKey("Devita.Models.ProductColor", "ColorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Devita.Models.Product", "Product")
                         .WithMany("ProductColor")
                         .HasForeignKey("ProductId")

@@ -99,7 +99,7 @@ namespace Devita.Controllers
                 data = _getBasketItems(basketItems);
             }
 
-
+            TempData["Success"] = "Product add basket";
             //return Ok(data);
             return RedirectToAction("index", "home");
         }
@@ -144,6 +144,7 @@ namespace Devita.Controllers
 
             ViewBag.SelectedMinPrice = minPrice ?? ViewBag.MinPrice;
             ViewBag.SelectedMaxPrice = maxPrice ?? ViewBag.MaxPrice;
+            ViewBag.totalPage = page;
 
 
             ShopViewModel shopVM = new ShopViewModel
@@ -181,6 +182,8 @@ namespace Devita.Controllers
 
             if (!ModelState.IsValid)
             {
+                TempData["Error"] = "Your comment has not been sent!";
+
                 return View("Detail", prodDetailVM);
             }
 
@@ -213,7 +216,10 @@ namespace Devita.Controllers
             comment.Status = false;
             comment.CreateAt = DateTime.UtcNow.AddHours(4);
             _context.ProductComments.Add(comment);
+
             _context.SaveChanges();
+            TempData["Success"] = "Send comment successfully";
+
 
 
             return RedirectToAction("detail", new { Id = comment.ProductId });

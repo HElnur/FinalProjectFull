@@ -163,6 +163,8 @@ namespace Devita.Controllers
             
 
             _emailService.Send(forgotVM.Email, "ChangePassword", body);
+
+            TempData["Success"] = "Email send!";
             return RedirectToAction("SignIn", "account");
         }
 

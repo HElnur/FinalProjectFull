@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "InfoComment";
+}
+
+@model ProductComment
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-xxl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Info comment</h4>
+                    </div>
+                    <div class="card-body">
+                        <h3>Fullname: </h3><h5>@Model.FullName</h5><hr />
+                        <h3>Product name: </h3><h5>@Model.Product.Name</h5><hr />
+                        <h3>Rate: </h3><h5>@Model.Rate</h5><hr />
+                        <h3>Text: </h3><h5>@Model.Text</h5><hr />
+                        <h3>Status: </h3><h5><span class="badge badge-@(Model.Status?"success":"info")">@(Model.Status?"Təsdiqlənib":"Gözləmədədir")</span></h5>
+                    </div>
+
+                    <div class="card-footer d-flex justify-content-end">
+                        @if (!Model.Status)
+                        {
+                            <form method="post" asp-action="AcceptComment" class="d-inline-block">
+                                <input name="Id" value="@Model.Id" type="hidden" />
+                                <button type="submit" class="btn btn-success" title="Accept"><i class="fas fa-check"></i></button>
+                            </form>
+                        }
+
+                        <a asp-action="index" class="btn btn-primary ms-5" title="Go to back"><i class="fas fa-hand-point-left"></i></a>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -30,7 +30,9 @@ namespace Devita.Models
         public bool IsTopHeadphone { get; set; }
         public bool IsBest { get; set; }
         public List<ProductImage> ProductImages { get; set; }
-        public List<ProductColor> ProductColor { get; set; }
+        public List<ProductColor> ProductColors { get; set; }
+        [NotMapped]
+        public List<int> Colors { get; set; }
         [NotMapped]
         public IFormFile PosterFile { get; set; }
         [NotMapped]

@@ -392,3 +392,6 @@ C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Devita.csproj.AssemblyReference.cache
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Edit.cshtml.g.cs
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Comments.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\InfoComment.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Order\Index.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Order\OrderContain.cshtml.g.cs

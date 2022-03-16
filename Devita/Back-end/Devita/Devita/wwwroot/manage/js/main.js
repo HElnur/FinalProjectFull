@@ -5,7 +5,7 @@
         let Id = $(this).attr("data-id");
         let url = $(this).attr("href");
 
-        fetch(url + Id)
+        fetch(url)
             .then(response => response.text())
             .then(data => {
                 console.log(data);

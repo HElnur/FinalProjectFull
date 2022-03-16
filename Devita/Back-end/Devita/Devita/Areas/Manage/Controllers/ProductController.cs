@@ -1,4 +1,5 @@
-﻿using Devita.Helper;
+﻿using Devita.Enum;
+using Devita.Helper;
 using Devita.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,7 +26,7 @@ namespace Devita.Areas.Manage.Controllers
 
         public IActionResult Index()
         {
-            var products = _context.Products.Include(x => x.ProductComments).Include(x => x.ProductImages).Include(x => x.ProductColor).Include(x => x.Category).ToList();
+            var products = _context.Products.Include(x => x.ProductComments).Include(x => x.ProductImages).Include(x => x.ProductColors).Include(x => x.Category).ToList();
 
             return View(products);
         }
@@ -33,6 +34,7 @@ namespace Devita.Areas.Manage.Controllers
         public IActionResult Create()
         {
             ViewBag.Categories = _context.Categories.ToList();
+
             return View();
         }
 
@@ -84,13 +86,13 @@ namespace Devita.Areas.Manage.Controllers
 
             else
             {
-                if(product.HoverPosterFile.Length > 2097152)
+                if (product.HoverPosterFile.Length > 2097152)
                 {
                     ModelState.AddModelError("HoverPosterFile", "PosterFile max size is 2MB!");
                     return View();
                 }
 
-                else if(product.HoverPosterFile.ContentType != "image/jpeg" && product.HoverPosterFile.ContentType != "image/png")
+                else if (product.HoverPosterFile.ContentType != "image/jpeg" && product.HoverPosterFile.ContentType != "image/png")
                 {
                     ModelState.AddModelError("HoverPosterFile", "ContentType must be image/jpeg or image/png!");
                     return View();
@@ -133,6 +135,20 @@ namespace Devita.Areas.Manage.Controllers
             }
 
             _context.Products.Add(product);
+
+            var productColors = new List<ProductColor>();
+
+            foreach (var colorId in product.Colors)
+            {
+                productColors.Add(new ProductColor
+                {
+                    ProductId = product.Id,
+                    Color = (ColorProduct)colorId
+                });
+            }
+
+            product.ProductColors = productColors;
+
             _context.SaveChanges();
 
             return RedirectToAction("index");
@@ -140,7 +156,7 @@ namespace Devita.Areas.Manage.Controllers
 
         public IActionResult Edit(int id)
         {
-            Product product = _context.Products.Include(x => x.ProductComments).Include(x => x.ProductImages).Include(x => x.ProductColor).Include(x => x.Category).FirstOrDefault(x => x.Id == id);
+            Product product = _context.Products.Include(x => x.ProductComments).Include(x => x.ProductImages).Include(x => x.ProductColors).Include(x => x.Category).FirstOrDefault(x => x.Id == id);
 
             if(product==null)
             {
@@ -335,10 +351,17 @@ namespace Devita.Areas.Manage.Controllers
             };
 
             comment.Status = true;
+            comment.CommentStatus = true;
 
             _context.SaveChanges();
 
             return RedirectToAction("index");
+            //return View();
         }
+
+        //public IActionResult Delete(int id)
+        //{
+        //    Product product = _context.Products.
+        //}
     }
 }

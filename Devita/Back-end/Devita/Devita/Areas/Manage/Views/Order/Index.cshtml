@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    var count = 0;
+}
+
+@model List<Order>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h4 class="card-title">Slider datatable</h4>
+                    <a asp-controller="slider" asp-action="create" style="background-color: #4885ED; border-radius: 0.5rem; padding: 10px 5px; font-family: 'Rubik' , sans-serif; color: #FFFFFF; font-weight: 400;">Create new</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example3" class="display" style="min-width: 845px">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Fullname</th>
+                                    <th>Total amount</th>
+                                    <th>Status</th>
+                                    <th>Delivery status</th>
+
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.FullName</td>
+                                        <td>@item.TotalAmount</td>
+                                        <td>
+                                            @if (item.Status == OrderStatus.Accepted)
+                                            {
+                                                <span class="badge badge-success">Qəbul edildi</span>
+                                            }
+
+                                            @if (item.Status == OrderStatus.Rejected)
+                                            {
+                                                <span class="badge badge-danger">Rədd edildi</span>
+                                            }
+
+                                            @if (item.Status == OrderStatus.Pending)
+                                            {
+                                                <span class="badge" style="background-color: #F29339;">Gözləmədədir</span>
+                                            }
+
+                                            @if (item.Status == OrderStatus.Canceled)
+                                            {
+                                                <span class="badge" style="background-color: #E54E60;">Ləğv edildi</span>
+                                            }
+                                        </td>
+
+                                        <td>
+                                            @if (item.DeliveryStatus == OrderDeliveryStatus.Delivered)
+                                            {
+                                                <span class="badge bg-success">Çatdırılmış</span>
+                                            }
+                                            @if (item.DeliveryStatus == OrderDeliveryStatus.OnCourier)
+                                            {
+                                                <span class="badge bg-warning">  Kuryerdə</span>
+                                            }
+
+                                            @if (item.DeliveryStatus == OrderDeliveryStatus.OnDepo)
+                                            {
+                                                <span class="badge bg-info">  Depoda</span>
+                                            }
+                                            @if (item.DeliveryStatus == OrderDeliveryStatus.OnProcessing)
+                                            {
+                                                <span class="badge bg-light">  Emalda</span>
+                                            }
+
+                                        </td>
+
+                                        <td class="text-center">
+                                            @if (item.Status != OrderStatus.Accepted)
+                                            {
+                                                <a class="btn shadow btn-xs sharp me-1 btn-success" asp-controller="order" asp-action="acceptorder" asp-route-id="@item.Id"><i class="fas fa-check"></i></a>
+
+                                            }
+                                            @if (item.Status != OrderStatus.Rejected)
+                                            {
+                                                <a class="btn shadow btn-xs sharp me-1 btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id"><i class="fas fa-times"></i></a>
+                                            }
+                                            <a asp-action="OrderContain" asp-controller="order" asp-route-id="@item.Id" class="btn shadow btn-xs sharp btn-warning"><i class="fas fa-eye"></i></a>
+                                        </td>
+
+                                        @*<td>
+                                                <div class="d-flex">
+                                                    <a asp-controller="slider" asp-action="edit" asp-route-Id="@item.Id" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                    <a asp-controller="slider" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>*@
+                                    </tr>
+
+                                    <div class="modal fade" id="exampleModal-@item.Id" tabindex="-1" aria-labelledby="exampleModal-@item.Id-Label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <form method="post" asp-action="RejectOrder" asp-controller="Order">
+
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModal-@item.Id-Label" style="font-size: 20px;"><i class="fas fa-times-circle pe-3" style="color: red; "></i>Reject comment</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <div class="text-center col-lg-10 m-auto">
+                                                            <textarea style="height:10rem;max-height :11rem;" maxlength="100" asp-for="@item.RejectComment" class="form-control input-default " placeholder="Reject Comment"></textarea>
+                                                            <span class="text-danger" asp-validation-for="@item.RejectComment"></span>
+                                                            <input type="hidden" asp-for="@item.Id" value="@item.Id" />
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fas fa-window-close pe-2"></i>Close</button>
+                                                        <button type="submit" class="btn btn-success"><i class="fas fa-save pe-2"></i>Save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+}
+
