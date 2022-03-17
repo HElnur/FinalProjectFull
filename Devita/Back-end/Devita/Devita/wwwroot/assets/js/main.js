@@ -30,8 +30,7 @@ $(function () {
                 for (var i = 0; i < data.basketItems.length; i++) {
                     let element = `
                                             <li class="clearfix d-flex">
-                            <img width="20%" height="20%" src="~/assets/image/`+ data.basketItems[i].productImage +`"
-                                 alt="item1" />
+                            
                             <div class="price-prdname p-3">
                                 <span class="item-name">@item.Name</span>
                                 <span class="item-price">`+ data.basketItems[i].price +`</span>

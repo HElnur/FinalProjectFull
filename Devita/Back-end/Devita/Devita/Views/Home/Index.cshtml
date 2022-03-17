@@ -25,7 +25,11 @@
                             <div class="col-lg-6 d-flex align-items-center">
                                 <div class="text" style="color: white;">
 
-                                    @Html.Raw(item.Text)
+                                    <div style="font-size: 25px; font-family: 'Rubik' , sans-serif;">
+                                        @Html.Raw(item.Text)
+                                        @*@item.Text*@
+
+                                    </div>
 
                                     <div class="shoppingBtn mt-5">
                                         <a href="#">Shopping now</a>

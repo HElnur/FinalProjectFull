@@ -282,6 +282,20 @@ namespace Devita.Areas.Manage.Controllers
             return RedirectToAction("index");
         }
 
+        public IActionResult Delete(int id)
+        {
+            Product product = _context.Products.Include(x => x.ProductComments).Include(x => x.ProductImages).Include(x => x.ProductColors).Include(x => x.Category).FirstOrDefault(x => x.Id == id);
+
+            if (product == null)
+            {
+                return RedirectToAction("index", "error");
+            }
+
+            ViewBag.Categories = _context.Categories.ToList();
+
+            return View(product);
+        }
+
         private void _setProductImage(ProductImage image, IFormFile file)
         {
             string newFileName = FileManager.Save(_env.WebRootPath, "uploads/products", file);

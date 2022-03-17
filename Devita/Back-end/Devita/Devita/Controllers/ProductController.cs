@@ -115,9 +115,10 @@ namespace Devita.Controllers
             ProductDetailViewModel productDetailVM = new ProductDetailViewModel
             {
                 Product = product,
-                RelatedProduct = _context.Products
-                .Include(x => x.ProductImages)
-                .Where(x => x.CategoryId == product.CategoryId).OrderByDescending(x => x.Id).Take(5).ToList()
+                //RelatedProduct = _context.Products
+                //.Include(x => x.ProductImages)
+                //.Where(x => x.CategoryId == product.CategoryId).OrderByDescending(x => x.Id).Take(5).ToList()
+                RelatedProduct = _context.Products.Include(x => x.ProductImages).Where(x => x.IsBest).ToList(),
             };
 
             return View(productDetailVM);

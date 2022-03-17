@@ -112,6 +112,7 @@
                                                 <th>Date</th>
                                                 <th>Price</th>
                                                 <th>Status</th>
+                                                <th>Delivery status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -133,6 +134,26 @@
 
                                                             @((int)(item.Status) == 1?"Pending":"") @((int)(item.Status) == 2?"Accepted":"")  @((int)(item.Status) == 3?"Rejected":"") @((int)(item.Status) == 4?"Canceled":"")
                                                         </span>
+                                                    </td>
+                                                    <td>
+
+                                                        @if (item.DeliveryStatus == Devita.Enum.OrderDeliveryStatus.Delivered)
+                                                        {
+                                                            <span class="badge bg-success">Delivered</span>
+                                                        }
+                                                        @if (item.DeliveryStatus == Devita.Enum.OrderDeliveryStatus.OnCourier)
+                                                        {
+                                                            <span class="badge bg-warning">  Courier</span>
+                                                        }
+
+                                                        @if (item.DeliveryStatus == Devita.Enum.OrderDeliveryStatus.OnDepo)
+                                                        {
+                                                            <span class="badge bg-info">  Depo</span>
+                                                        }
+                                                        @if (item.DeliveryStatus == Devita.Enum.OrderDeliveryStatus.OnProcessing)
+                                                        {
+                                                            <span class="badge bg-danger">  Processing</span>
+                                                        }
                                                     </td>
                                                 </tr>
                                                 <partial name="_OrderProductTablePartial" model="item"/>

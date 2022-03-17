@@ -111,6 +111,24 @@ namespace Devita.Areas.Manage.Controllers
                 return View();
             }
 
+            if(slider.BgImageFile != null)
+            {
+                if (slider.BgImageFile.Length > 2097152)
+                {
+                    ModelState.AddModelError("BgImageFile", "File size can not be more than 2MB!");
+                    return View();
+                }
+
+                else if (slider.BgImageFile.ContentType != "image/jpeg" && slider.ImageFile.ContentType != "image/png")
+                {
+                    ModelState.AddModelError("BgImageFile", "ContentType must be image/jpeg or image/png!");
+                    return View();
+                }
+
+                FileManager.Delete(_env.WebRootPath, "uploads/slider", existSlider.BgImage);
+                existSlider.BgImage = FileManager.Save(_env.WebRootPath, "uploads/slider", slider.BgImageFile);
+            }
+
             if (slider.ImageFile != null)
             {
 
@@ -131,22 +149,38 @@ namespace Devita.Areas.Manage.Controllers
                     FileManager.Delete(_env.WebRootPath, "uploads/slider", existSlider.Image);
                     existSlider.Image = FileManager.Save(_env.WebRootPath, "uploads/slider", slider.ImageFile);
                 }
+
+                if (slider.Image == null)
+                {
+
+                    if (slider.ImageFile == null)
+                    {
+                        FileManager.Delete(_env.WebRootPath, "uploads/slider", existSlider.Image);
+
+                        existSlider.Image = null;
+                    }
+
+                    existSlider.Image = FileManager.Save(_env.WebRootPath, "uploads/slider", slider.ImageFile);
+
+
+                }
             }
 
-            else if (slider.Image == null)
+            if(slider.ImageFile == null)
             {
-
-                if(slider.ImageFile == null)
+                if (slider.Image == null)
                 {
+
                     FileManager.Delete(_env.WebRootPath, "uploads/slider", existSlider.Image);
 
                     existSlider.Image = null;
+
+
+
                 }
-
-             
-                
-
             }
+
+            
 
             existSlider.Text = slider.Text;
 

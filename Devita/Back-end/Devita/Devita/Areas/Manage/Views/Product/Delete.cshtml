@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Delete";
 }
 
 @model Product
@@ -33,7 +33,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-12 col-xxl-12">
-                <form asp-action="create" method="post" enctype="multipart/form-data">
+                <form asp-action="edit" method="post" enctype="multipart/form-data">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Create new product</h4>
@@ -43,13 +43,11 @@
                                 <div class="mb-3 col-lg-6">
                                     <label class="form-label" asp-for="Name">Title</label>
                                     <input asp-for="Name" class="form-control" placeholder="Name">
-                                    <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
 
                                 <div class="mb-3 col-lg-6">
                                     <label class="form-label" asp-for="Description">Description</label><br />
                                     <textarea asp-for="Description" cols="80" rows="2" placeholder="Description"></textarea>
-                                    <span asp-validation-for="Description" class="text-danger"></span>
                                 </div>
                             </div>
 
@@ -57,7 +55,6 @@
                                 <div class="col-lg-6">
                                     <select class="form-control" asp-for="CategoryId" asp-items="@new SelectList((List<Category>)ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))">
                                     </select>
-                                    <span asp-validation-for="CategoryId" class="text-danger"></span>
                                 </div>
 
                                 <div class="col-lg-6">
@@ -67,27 +64,23 @@
                                             <option value="@((int)color)">@color</option>
                                         }
                                     </select>
-                                    <span asp-validation-for="Colors" class="text-danger"></span>
                                 </div>
                             </div>
-                                
+
                             <div class="row mt-5">
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label" asp-for="CostPrice">Cost price</label>
                                     <input asp-for="CostPrice" class="form-control" placeholder="Cost price">
-                                    <span asp-validation-for="CostPrice" class="text-danger"></span>
                                 </div>
 
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label" asp-for="SalePrice">Sale price</label>
                                     <input asp-for="SalePrice" class="form-control" placeholder="Sale price">
-                                    <span asp-validation-for="SalePrice" class="text-danger"></span>
                                 </div>
 
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label" asp-for="DiscountPercent">Discount percent</label>
                                     <input asp-for="DiscountPercent" class="form-control" placeholder="Discount percent">
-                                    <span asp-validation-for="DiscountPercent" class="text-danger"></span>
                                 </div>
                             </div>
 
@@ -96,18 +89,17 @@
                                     <label class="form-label">Stock</label>
                                     <div class="col-sm-9">
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="StockStatus" type="radio" value="@true">
+                                            <input class="form-check-input" asp-for="StockStatus" type="radio" value="@true" disabled>
                                             <label asp-for="StockStatus" style="color: #96A0AF" ; class="form-check-label">
                                                 In stock
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="StockStatus" type="radio" value="@false">
+                                            <input class="form-check-input" asp-for="StockStatus" type="radio" value="@false" disabled>
                                             <label asp-for="StockStatus" style="color: #96A0AF" ; class="form-check-label">
                                                 Out stock
                                             </label>
                                         </div>
-                                        <span asp-validation-for="StockStatus" class="text-danger"></span>
 
                                     </div>
                                 </div>
@@ -116,18 +108,17 @@
                                     <label class="form-label">Is new</label>
                                     <div class="col-sm-9">
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsNew" type="radio" value="@true">
+                                            <input class="form-check-input" asp-for="IsNew" type="radio" value="@true" disabled>
                                             <label asp-for="IsNew" style="color: #96A0AF" ; class="form-check-label">
                                                 True
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsNew" type="radio" value="@false">
+                                            <input class="form-check-input" asp-for="IsNew" type="radio" value="@false" disabled>
                                             <label asp-for="IsNew" style="color: #96A0AF" ; class="form-check-label">
                                                 False
                                             </label>
                                         </div>
-                                        <span asp-validation-for="IsNew" class="text-danger"></span>
 
                                     </div>
                                 </div>
@@ -136,18 +127,17 @@
                                     <label class="form-label">Is featured</label>
                                     <div class="col-sm-9">
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsFeatured" type="radio" value="@true">
+                                            <input class="form-check-input" asp-for="IsFeatured" type="radio" value="@true" disabled>
                                             <label asp-for="IsFeatured" style="color: #96A0AF" ; class="form-check-label">
                                                 True
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsFeatured" type="radio" value="@false">
+                                            <input class="form-check-input" asp-for="IsFeatured" type="radio" value="@false" disabled>
                                             <label asp-for="IsFeatured" style="color: #96A0AF" ; class="form-check-label">
                                                 False
                                             </label>
                                         </div>
-                                        <span asp-validation-for="IsFeatured" class="text-danger"></span>
 
                                     </div>
                                 </div>
@@ -160,18 +150,17 @@
                                     <label class="form-label">Top rate</label>
                                     <div class="col-sm-9">
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsTopRate" type="radio" value="@true">
+                                            <input class="form-check-input" asp-for="IsTopRate" type="radio" value="@true" disabled>
                                             <label asp-for="IsTopRate" style="color: #96A0AF" ; class="form-check-label">
                                                 True
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsTopRate" type="radio" value="@false">
+                                            <input class="form-check-input" asp-for="IsTopRate" type="radio" value="@false" disabled>
                                             <label asp-for="IsTopRate" style="color: #96A0AF" ; class="form-check-label">
                                                 False
                                             </label>
                                         </div>
-                                        <span asp-validation-for="IsTopRate" class="text-danger"></span>
 
                                     </div>
                                 </div>
@@ -180,18 +169,17 @@
                                     <label class="form-label">Is best</label>
                                     <div class="col-sm-9">
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsBest" type="radio" value="@true">
+                                            <input class="form-check-input" asp-for="IsBest" type="radio" value="@true" disabled>
                                             <label asp-for="IsBest" style="color: #96A0AF" ; class="form-check-label">
                                                 True
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsBest" type="radio" value="@false">
+                                            <input class="form-check-input" asp-for="IsBest" type="radio" value="@false" disabled>
                                             <label asp-for="IsBest" style="color: #96A0AF" ; class="form-check-label">
                                                 False
                                             </label>
                                         </div>
-                                        <span asp-validation-for="IsBest" class="text-danger"></span>
 
                                     </div>
                                 </div>
@@ -200,18 +188,17 @@
                                     <label class="form-label">Top headphone</label>
                                     <div class="col-sm-9">
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsTopHeadphone" type="radio" value="@true">
+                                            <input class="form-check-input" asp-for="IsTopHeadphone" type="radio" value="@true" disabled>
                                             <label asp-for="IsTopHeadphone" style="color: #96A0AF" ; class="form-check-label">
                                                 True
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsTopHeadphone" type="radio" value="@false">
+                                            <input class="form-check-input" asp-for="IsTopHeadphone" type="radio" value="@false" disabled>
                                             <label asp-for="IsTopHeadphone" style="color: #96A0AF" ; class="form-check-label">
                                                 False
                                             </label>
                                         </div>
-                                        <span asp-validation-for="IsTopHeadphone" class="text-danger"></span>
 
                                     </div>
                                 </div>
@@ -220,29 +207,35 @@
                             <div class="row">
                                 <div class=" mb-3 col-lg-6">
                                     <label asp-for="PosterFile" style="font-family: 'Rubik', sans-serif; color: #4885ED; font-weight: 400; font-size: 18px;">Poster image</label>
-                                    <input asp-for="PosterFile" />
-                                    <span class="text-danger" asp-validation-for="PosterFile"></span>
-                                    @*<img src="~/uploads/products/@Model.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image" />*@
+                                   
+                                    <img src="~/uploads/products/@Model.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image" />
                                 </div>
 
                                 <div class=" mb-3 col-lg-6">
                                     <label asp-for="HoverPosterFile" style="font-family: 'Rubik', sans-serif; color: #4885ED; font-weight: 400; font-size: 18px;">Hover image</label>
-                                    <input asp-for="HoverPosterFile" />
-                                    <span class="text-danger" asp-validation-for="HoverPosterFile"></span>
+                                    
+                                    <img src="~/uploads/products/@Model.ProductImages.FirstOrDefault(x => x.PosterStatus==false)?.Image" />
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="mb-3 col-lg-12">
                                     <label asp-for="ImageFiles" style="font-family: 'Rubik', sans-serif; color: #4885ED; font-weight: 400; font-size: 18px;">Product images</label>
-                                    <input asp-for="ImageFiles" />
-                                    <span class="text-danger" asp-validation-for="ImageFiles"></span>
+                                    
+
+                                    @foreach (var item in Model.ProductImages.Where(x => x.PosterStatus == null))
+                                    {
+                                        <div class="img-box d-flex flex-column justify-content-center" style="width: 20%;">
+                                            <input type="hidden" name="Image" value="@item.Image" />
+                                            <img width="150" height="150" src="~/uploads/products/@item.Image" alt="Alternate Text" />
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" style="background-color: #4885ED; border: none; box-shadow: none; font-family: 'Rubik' , sans-serif; font-weight: 500; font-size: 20px; padding: 8px 10px; border-radius: 0.5rem; color: #FFFFFF;">Create</button>
+                            <button type="submit" style="background-color: #4885ED; border: none; box-shadow: none; font-family: 'Rubik' , sans-serif; font-weight: 500; font-size: 20px; padding: 8px 10px; border-radius: 0.5rem; color: #FFFFFF;">Edit</button>
 
                         </div>
 
@@ -252,3 +245,4 @@
         </div>
     </div>
 </div>
+

@@ -43,23 +43,26 @@
                             </tbody>
                         </table>
 
-                        <h1 class="text-center mb-4 mt-4" style="font-weight:700">Delivery Status Action</h1>
+                        <h1 class="text-center mb-4 mt-4" style="font-weight:700">Delivery Status</h1>
                         <div class="row mb-3">
                             
-                            <div class="col-lg-3">
-                                <a asp-action="StatusProcess" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-light">Emalda</a>
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <a asp-action="StatusProcess" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-light"><i class="fas fa-spinner pe-2"></i>Emalda</a>
                             </div>
-                            <div class="col-lg-3">
-                                <a asp-action="StatusDepo" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-info">Depoda</a>
-                            </div>
-                            <div class="col-lg-3">
-                                <a asp-action="StatusCourier" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-warning">Kuryerdə</a>
-                            </div>
-                            <div class="col-lg-3">
-                                <a asp-action="StatusDeliver" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-success">Çatdırılmış</a>
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <a asp-action="StatusDepo" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-info"><i class="fas fa-warehouse pe-2"></i>Depoda</a>
                             </div>
                             
                             
+                            
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <a asp-action="StatusCourier" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fas fa-truck pe-2"></i>Kuryerdə</a>
+                            </div>
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <a asp-action="StatusDeliver" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-success"><i class="fas fa-box pe-2"></i>Çatdırılmış</a>
+                            </div>
                         </div>
 
                         <h1 style="font-weight:700;" class="text-center mb-3 mt-5"> Order Items </h1>

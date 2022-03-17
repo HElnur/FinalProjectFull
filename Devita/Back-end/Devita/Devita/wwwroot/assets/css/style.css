@@ -566,6 +566,14 @@ header .bottom-header nav .navbar-menu .shop {
     height: 419px;
 }
 
+#hero .carousel-indicators .item-dot {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+
+
     #hero .carousel-inner .carousel-item {
         height: 419px;
     }
