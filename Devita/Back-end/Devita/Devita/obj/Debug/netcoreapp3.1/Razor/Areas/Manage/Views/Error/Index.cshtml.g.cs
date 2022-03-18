@@ -21,20 +21,27 @@ using Devita.Areas.Manage.ViewModels;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\Areas\Manage\Views\_ViewImports.cshtml"
-using Devita.Models;
+using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\Areas\Manage\Views\_ViewImports.cshtml"
+using Devita.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\Areas\Manage\Views\_ViewImports.cshtml"
 using Devita.Enum;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"84d6889245ff70ba3eb676bd63ebe3443e72525f", @"/Areas/Manage/Views/Error/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"59a7c064c950806cd8905fa1e248bbaf25a603f8", @"/Areas/Manage/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c50db41a8bd976928a6b3170bc011fb8a8105f77", @"/Areas/Manage/Views/_ViewImports.cshtml")]
     public class Areas_Manage_Views_Error_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/manage/css/style.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -85,7 +92,7 @@ using Devita.Enum;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html lang=\"en\" class=\"h-100\">\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f7709", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f7941", async() => {
                 WriteLiteral("\r\n    <meta charset=\"utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"keywords\"");
                 BeginWriteAttribute("content", " content=\"", 236, "\"", 246, 0);
                 EndWriteAttribute();
@@ -109,7 +116,7 @@ using Devita.Enum;
     <!-- FAVICONS ICON -->
     <link rel=""shortcut icon"" type=""image/png"" href=""images/favicon.png"">
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "84d6889245ff70ba3eb676bd63ebe3443e72525f9335", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "84d6889245ff70ba3eb676bd63ebe3443e72525f9567", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -136,7 +143,7 @@ using Devita.Enum;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f11226", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f11458", async() => {
                 WriteLiteral(@"
     <div class=""authincation h-100"">
         <div class=""container h-100"">
@@ -148,7 +155,7 @@ using Devita.Enum;
                         <p>You may have mistyped the address or the page may have moved.</p>
                         <div>
                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f12123", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f12355", async() => {
                     WriteLiteral("Back to Home");
                 }
                 );
@@ -179,7 +186,7 @@ using Devita.Enum;
     ***********************************-->
     <!-- Required vendors -->
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f13923", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f14155", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -193,7 +200,7 @@ using Devita.Enum;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f15023", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f15255", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -207,7 +214,7 @@ using Devita.Enum;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f16123", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f16355", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -221,7 +228,7 @@ using Devita.Enum;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f17223", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6889245ff70ba3eb676bd63ebe3443e72525f17455", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

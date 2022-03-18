@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Devita.Areas.Manage.Controllers
 {
     [Area("manage")]
-    //[Authorize(Roles ="SuperAdmin,Admin")]
+    [Authorize(Roles ="SuperAdmin,Admin")]
 
     public class SettingController : Controller
     {

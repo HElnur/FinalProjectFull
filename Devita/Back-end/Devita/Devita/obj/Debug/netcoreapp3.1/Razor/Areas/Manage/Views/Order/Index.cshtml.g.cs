@@ -21,20 +21,27 @@ using Devita.Areas.Manage.ViewModels;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\Areas\Manage\Views\_ViewImports.cshtml"
-using Devita.Models;
+using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\Areas\Manage\Views\_ViewImports.cshtml"
+using Devita.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\Areas\Manage\Views\_ViewImports.cshtml"
 using Devita.Enum;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7053dfd219aec0a0c21161b54142aa3b8a73d9ff", @"/Areas/Manage/Views/Order/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"59a7c064c950806cd8905fa1e248bbaf25a603f8", @"/Areas/Manage/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c50db41a8bd976928a6b3170bc011fb8a8105f77", @"/Areas/Manage/Views/_ViewImports.cshtml")]
     public class Areas_Manage_Views_Order_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Order>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "slider", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -102,7 +109,7 @@ using Devita.Enum;
                 <div class=""card-header d-flex justify-content-between"">
                     <h4 class=""card-title"">Slider datatable</h4>
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff10521", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff10753", async() => {
                 WriteLiteral("Create new");
             }
             );
@@ -317,7 +324,7 @@ using Devita.Enum;
 #line hidden
 #nullable disable
             WriteLiteral("                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff20654", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff20886", async() => {
                 WriteLiteral("<i class=\"fas fa-check\"></i>");
             }
             );
@@ -384,7 +391,7 @@ using Devita.Enum;
 #line hidden
 #nullable disable
             WriteLiteral("                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff24741", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff24973", async() => {
                 WriteLiteral("<i class=\"fas fa-eye\"></i>");
             }
             );
@@ -443,7 +450,7 @@ WriteAttributeValue("", 6124, item.Id, 6124, 8, false);
             WriteAttributeValue("", 6132, "-Label", 6132, 6, true);
             EndWriteAttribute();
             WriteLiteral(" aria-hidden=\"true\">\r\n                                        <div class=\"modal-dialog modal-lg modal-dialog-centered\">\r\n                                            <div class=\"modal-content\">\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff28795", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff29027", async() => {
                 WriteLiteral("\r\n\r\n                                                    <div class=\"modal-header\">\r\n                                                        <h5 class=\"modal-title\"");
                 BeginWriteAttribute("id", " id=\"", 6612, "\"", 6644, 3);
                 WriteAttributeValue("", 6617, "exampleModal-", 6617, 13, true);
@@ -463,7 +470,7 @@ WriteAttributeValue("", 6630, item.Id, 6630, 8, false);
 
                                                         <div class=""text-center col-lg-10 m-auto"">
                                                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff30349", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff30581", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
@@ -488,7 +495,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff32302", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff32534", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
@@ -510,7 +517,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff34045", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7053dfd219aec0a0c21161b54142aa3b8a73d9ff34277", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

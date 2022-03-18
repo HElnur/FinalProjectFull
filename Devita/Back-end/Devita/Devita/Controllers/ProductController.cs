@@ -135,8 +135,8 @@ namespace Devita.Controllers
                 products = products.Where(x => x.CategoryId == categoryId);
             }
 
-            ViewBag.MinPrice = products.Min(x => x.SalePrice);
-            ViewBag.MaxPrice = products.Max(x => x.SalePrice);
+            ViewBag.MinPrice = (int)products.Min(x => x.SalePrice);
+            ViewBag.MaxPrice = (int)products.Max(x => x.SalePrice);
 
             if (minPrice != null && maxPrice != null)
             {
@@ -324,8 +324,10 @@ namespace Devita.Controllers
                     productBasket.Count--;
                 }
                 HttpContext.Response.Cookies.Append("basketItemList", JsonConvert.SerializeObject(productsDetail));
+
+
             }
-            return View();
+            return RedirectToAction("index" , "home");
 
         }
     }

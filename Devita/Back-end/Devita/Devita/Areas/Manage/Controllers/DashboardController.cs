@@ -1,4 +1,5 @@
 ﻿using Devita.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 namespace Devita.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class DashboardController : Controller
     {
         private readonly DevitaContext _context;

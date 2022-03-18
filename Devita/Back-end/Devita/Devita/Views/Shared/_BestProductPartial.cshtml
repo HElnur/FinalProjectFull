@@ -12,7 +12,9 @@
                 {
                     if (i == 0)
                     {
+
                         <div class="top-product">
+
                             <div class="content d-flex">
                                 <div class="card-image" style="width: 40%;">
                                     <img class="image" width="50%" height="80%"
@@ -26,7 +28,7 @@
 
                                         }
 
-                                    
+
                                     </div>
                                 </div>
 
@@ -53,7 +55,17 @@
                                         </div>
 
                                         <div class="add-cart-wishlist">
-                                            <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket add-cart">ADD TO CART</a>
+                                            @if (item.StockStatus)
+                                            {
+                                                <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket add-cart">ADD TO CART</a>
+
+                                            }
+
+                                            else
+                                            {
+                                                <a class="single-btn add-basket add-cart"><i class="far fa-times-circle pe-1" style="color: red;"></i>Out Stock</a>
+
+                                            }
                                             <a href="#" class="wishlist"><i class='bx bx-heart'></i></a>
                                         </div>
                                     </div>
@@ -78,7 +90,7 @@
 
                                         }
 
-                                     
+
                                     </div>
                                 </div>
 
@@ -105,7 +117,17 @@
                                         </div>
 
                                         <div class="add-cart-wishlist">
-                                            <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket add-cart">ADD TO CART</a>
+                                            @if (item.StockStatus)
+                                            {
+                                                <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket add-cart">ADD TO CART</a>
+
+                                            }
+
+                                            else
+                                            {
+                                                <a class="single-btn add-basket add-cart"><i class="far fa-times-circle pe-1" style="color: red;"></i>Out Stock</a>
+
+                                            }
                                             <a href="#" class="wishlist"><i class='bx bx-heart'></i></a>
                                         </div>
                                     </div>

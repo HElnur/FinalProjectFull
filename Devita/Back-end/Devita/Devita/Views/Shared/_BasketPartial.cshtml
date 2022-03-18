@@ -3,9 +3,10 @@
 <div class="col-lg-2 col-md-12 d-flex align-items-center justify-content-lg-start justify-content-center">
     <div class="order position-relative">
         <a asp-controller="Order" asp-action="checkout" class="order-text position-relative">
-            <i class='bx bxs-shopping-bag-alt'></i>$@Model.TotalAmount.ToString("#.00") <i class="ps-1 fa-solid fa-angle-down"></i>
+            
+            <i class='bx bxs-shopping-bag-alt'></i>$@Model?.TotalAmount.ToString("0.00") <i class="ps-1 fa-solid fa-angle-down"></i>
             <span class="order-badge position-absolute py-1 px-2 top-0 translate-middle rounded-circle">
-                <span class="visually count">@(Model.BasketItems?.Count()??0)</span>
+                <span class="visually count">@(Model?.BasketItems?.Count()??0)</span>
             </span>
         </a>
 
@@ -15,7 +16,7 @@
                 <div class="shopping-cart-total">
                     <span class="lighter-text">Total:</span>
                     @*<span class="main-color-text sale-price">$@(Model?.TotalAmount!=null?(Model.TotalAmount.ToString("0.00")):("0"))</span>*@
-                    <span class="main-color-text sale-price">$@Model?.TotalAmount.ToString("#.00")</span>
+                    <span class="main-color-text sale-price">$@Model?.TotalAmount.ToString("0.00")</span>
                 </div>
             </div>
             <!--end shopping-cart-header -->

@@ -1,5 +1,6 @@
 ﻿using Devita.Helper;
 using Devita.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 namespace Devita.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class HomeStaticController : Controller
     {
         private readonly DevitaContext _context;

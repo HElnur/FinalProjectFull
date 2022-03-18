@@ -6,9 +6,10 @@
             <div class="col-lg-2 col-md-4 col-sm-6 product mx-2">
                 <div class="top-product">
                     <div class="content">
+
                         <div class="card-image">
-                            <img class="image" src="/assets/image/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image" alt="">
-                            <img class="hover-image" src="/assets/image/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==false)?.Image"
+                            <img class="image" src="~/uploads/products/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image" alt="">
+                            <img class="hover-image" src="~/uploads/products/@item.ProductImages.FirstOrDefault(x => x.PosterStatus==false)?.Image"
                                  alt="">
                             <div class="modal-discount d-flex justify-content-between align-items-center position-absolute">
 
@@ -68,9 +69,19 @@
                                     <i class='bx bx-heart'></i>
                                 </a>
 
-                                <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket">
-                                    ADD TO CARD
-                                </a>
+                                @if (item.StockStatus)
+                                {
+                                    <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket">
+                                        ADD TO CARD
+                                    </a>
+                                }
+
+                                else
+                                {
+                                    <a class="single-btn add-basket d-flex align-items-center">
+                                        <i class="far fa-times-circle pe-1" style="color: red;"></i>Out Stock
+                                    </a>
+                                }
 
                                 <a href="#">
                                     <i class='bx bx-slider'></i>

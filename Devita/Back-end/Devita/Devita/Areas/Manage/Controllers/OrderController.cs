@@ -1,4 +1,5 @@
 ﻿using Devita.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace Devita.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class OrderController : Controller
     {
         private readonly DevitaContext _context;

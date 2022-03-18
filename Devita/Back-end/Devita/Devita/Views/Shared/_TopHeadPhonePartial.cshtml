@@ -77,9 +77,19 @@
                                     <i class='bx bx-heart'></i>
                                 </a>
 
-                                <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket">
-                                    ADD TO CARD
-                                </a>
+                                @if (item.StockStatus)
+                                {
+                                    <a asp-action="addbasket" asp-controller="product" asp-route-prodId="@item.Id" class="single-btn add-basket">
+                                        ADD TO CARD
+                                    </a>
+                                }
+
+                                else
+                                {
+                                    <a class="single-btn add-basket d-flex align-items-center">
+                                        <i class="far fa-times-circle pe-1" style="color: red;"></i>Out Stock
+                                    </a>
+                                }
 
                                 <a href="#">
                                     <i class='bx bx-slider'></i>

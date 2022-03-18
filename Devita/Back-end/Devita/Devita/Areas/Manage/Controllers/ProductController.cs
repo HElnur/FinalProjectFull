@@ -1,6 +1,7 @@
 ﻿using Devita.Enum;
 using Devita.Helper;
 using Devita.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 namespace Devita.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class ProductController : Controller
     {
         private readonly DevitaContext _context;
@@ -295,6 +297,21 @@ namespace Devita.Areas.Manage.Controllers
 
             return View(product);
         }
+
+        //[HttpPost]
+        //public IActionResult Delete(Product product)
+        //{
+        //    Product existProduct = _context.Products.FirstOrDefault(x => x.Id == product.Id);
+
+        //    if(existProduct == null)
+        //    {
+        //        return RedirectToAction("index", "error");
+        //    }
+
+        //    FileManager.Delete(_env.WebRootPath , "uploads/products" , existProduct.)
+
+
+        //}
 
         private void _setProductImage(ProductImage image, IFormFile file)
         {

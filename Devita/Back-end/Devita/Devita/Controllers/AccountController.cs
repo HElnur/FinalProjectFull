@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -43,34 +44,55 @@ namespace Devita.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SignIn(MemberSignInViewModel memberVM)
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("index", "home");
-            }
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
             
 
-            AppUser member = await _userManager.Users.FirstOrDefaultAsync(x => !x.IsAdmin && x.NormalizedUserName == memberVM.UserName.ToUpper());
-
-            if (member==null)
+            var UserExists = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == memberVM.UserName);
+            if (UserExists == null)
             {
-                ModelState.AddModelError("", "Username or password is incorrect!");
+                ModelState.AddModelError("", "Username or Password is incorrect!");
                 return View();
             }
-
-            var result = await _signInManager.PasswordSignInAsync(member , memberVM.Password, false , false);
-
-            if (!result.Succeeded)
+            if (!UserExists.IsAdmin)
             {
-                ModelState.AddModelError("", "Username or password is incorrect!");
-                return View();
+
+                var result = await _signInManager.PasswordSignInAsync(UserExists, memberVM.Password, false, false);
+                if (!result.Succeeded)
+                {
+                    ModelState.AddModelError("", "Username or Password is incorrect!");
+                    return View();
+                }
+
+
+                var BasketCookiesDelete = HttpContext.Request.Cookies["basketItemList"];
+                if (BasketCookiesDelete != null)
+                {
+                    var CookieDeleteJson = JsonConvert.DeserializeObject<List<BasketItemViewModel>>(BasketCookiesDelete);
+                    foreach (var cookieItem in CookieDeleteJson)
+                    {
+                        BasketItem basketItemAdd = new BasketItem
+                        {
+                            Count = cookieItem.Count,
+                            AppUserId = UserExists.Id,
+                            ProductId = cookieItem.ProductId
+                        };
+
+                        var productExist = _context.BasketItems.Any(x => x.ProductId == basketItemAdd.ProductId);
+                        var productCount = _context.BasketItems.FirstOrDefault(x => x.ProductId == basketItemAdd.ProductId);
+                        if (productExist)
+                        {
+                            productCount.Count++;
+                        }
+                        else
+                        {
+                            _context.BasketItems.Add(basketItemAdd);
+                        }
+
+                    }
+                    HttpContext.Response.Cookies.Delete("basketItemList");
+                    _context.SaveChanges();
+                    
+                }
             }
-
-
             return RedirectToAction("index", "home");
         }
 

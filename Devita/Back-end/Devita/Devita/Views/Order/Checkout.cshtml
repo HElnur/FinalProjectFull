@@ -58,7 +58,7 @@
 
                                     <tr>
                                         <th scope="row">
-                                            <img src="/assets/image/@item.Product.ProductImages.FirstOrDefault(x => x.PosterStatus==true).Image" alt="">
+                                            <img src="~/uploads/products/@item.Product.ProductImages.FirstOrDefault(x => x.PosterStatus==true).Image" alt="">
                                         </th>
                                         <td>@item.Product.Name</td>
                                         @if (item.Product.DiscountPercent > 0)
@@ -74,7 +74,7 @@
                                         }
                                         <td>@item.Count</td>
                                         <td>$@TotalPrice.ToString("#.00")</td>
-                                        <td><a class="btn deleteBtn" asp-action="deleteBasket" asp-controller="product" asp-route-id="@item.Product.Id"><i class="fas fa-trash"></i></a></td>
+                                        <td><a class="btn deleteBtn" asp-action="DeleteBasket" asp-controller="product" asp-route-id="@item.Product.Id"><i class="fas fa-trash"></i></a></td>
 
                                     </tr>
                                 }

@@ -574,56 +574,56 @@ header .bottom-header nav .navbar-menu .shop {
 
 
 
-    #hero .carousel-inner .carousel-item {
-        height: 419px;
+#hero .carousel-inner .carousel-item {
+    height: 419px;
+}
+
+#hero .carousel-inner .carousel-item {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+    #hero .carousel-inner .carousel-item .text .small-caption {
+        margin-bottom: 15px;
     }
 
-    #hero .carousel-inner .carousel-item {
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-
-        #hero .carousel-inner .carousel-item .text .small-caption {
-            margin-bottom: 15px;
+        #hero .carousel-inner .carousel-item .text .small-caption p {
+            color: #FFFFFF;
+            font-size: 14px;
+            font-family: 'Rubik', sans-serif;
         }
 
-            #hero .carousel-inner .carousel-item .text .small-caption p {
-                color: #FFFFFF;
-                font-size: 14px;
-                font-family: 'Rubik', sans-serif;
-            }
+    #hero .carousel-inner .carousel-item .text .title {
+        margin-bottom: 15px;
+        color: #FFFFFF;
+        font-family: 'Rubik', sans-serif;
+        font-size: 38px;
+    }
 
-        #hero .carousel-inner .carousel-item .text .title {
-            margin-bottom: 15px;
+    #hero .carousel-inner .carousel-item .text .price {
+        margin-bottom: 20px;
+    }
+
+        #hero .carousel-inner .carousel-item .text .price span {
+            font-size: 14px;
             color: #FFFFFF;
+            padding-right: 10px;
             font-family: 'Rubik', sans-serif;
+        }
+
+        #hero .carousel-inner .carousel-item .text .price .currency {
             font-size: 38px;
         }
 
-        #hero .carousel-inner .carousel-item .text .price {
-            margin-bottom: 20px;
-        }
-
-            #hero .carousel-inner .carousel-item .text .price span {
-                font-size: 14px;
-                color: #FFFFFF;
-                padding-right: 10px;
-                font-family: 'Rubik', sans-serif;
-            }
-
-            #hero .carousel-inner .carousel-item .text .price .currency {
-                font-size: 38px;
-            }
-
-        #hero .carousel-inner .carousel-item .text .shoppingBtn a {
-            text-decoration: none;
-            color: #FFFFFF;
-            font-family: 'Rubik', sans-serif;
-            font-size: 13px;
-            padding: 12px 35px;
-            border-radius: 0.3rem;
-            background-color: #0363CD;
-        }
+    #hero .carousel-inner .carousel-item .text .shoppingBtn a {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-family: 'Rubik', sans-serif;
+        font-size: 13px;
+        padding: 12px 35px;
+        border-radius: 0.3rem;
+        background-color: #0363CD;
+    }
 
 #wrapper .container {
     width: 100% !important;
@@ -1222,7 +1222,6 @@ header .bottom-header nav .navbar-menu .shop {
             }
 
 #home-static {
-    
     height: 494.05px;
     background-size: 100% 100%;
 }
@@ -4774,6 +4773,63 @@ footer {
     #profile-order #profile .profile .content label {
         width: 22%;
     }
+
+    /*    .sb-range-slider {
+        height: 7px;
+        background: #e8e8e8;
+    }
+
+        .sb-range-slider .ui-slider-handle {
+            width: 21px;
+            height: 21px;
+            top: -7px;
+            background: #fff;
+            border: 3px solid #62ab00;
+            border-radius: 100%;
+        }
+
+            .sb-range-slider .ui-slider-handle:focus {
+                outline: none;
+            }
+
+        .sb-range-slider .ui-widget-header {
+            background: #62ab00;
+            top: 0;
+            height: 100%;
+        }
+
+    .slider-price {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+        .slider-price p {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+            .slider-price p .btn {
+                width: 100px;
+            }
+
+        .slider-price input#amount {
+            background: transparent;
+            border: transparent;
+            color: #333;
+            text-align: left;
+            font-weight: 700;
+            word-spacing: 15px;
+        }
+
+            .slider-price input#amount:focus {
+                outline: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }*/
 
     .sb-range-slider {
         height: 7px;
