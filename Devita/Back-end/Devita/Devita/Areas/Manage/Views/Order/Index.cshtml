@@ -11,8 +11,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h4 class="card-title">Slider datatable</h4>
-                    <a asp-controller="slider" asp-action="create" style="background-color: #4885ED; border-radius: 0.5rem; padding: 10px 5px; font-family: 'Rubik' , sans-serif; color: #FFFFFF; font-weight: 400;">Create new</a>
+                    <h4 class="card-title">Order datatable</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -87,7 +86,7 @@
                                                 <a class="btn shadow btn-xs sharp me-1 btn-success" asp-controller="order" asp-action="acceptorder" asp-route-id="@item.Id"><i class="fas fa-check"></i></a>
 
                                             }
-                                            @if (item.Status != OrderStatus.Rejected)
+                                            @if (item.Status != OrderStatus.Rejected && item.DeliveryStatus != OrderDeliveryStatus.Delivered)
                                             {
                                                 <a class="btn shadow btn-xs sharp me-1 btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id"><i class="fas fa-times"></i></a>
                                             }
@@ -95,25 +94,53 @@
                                         </td>
 
                                         @*<td>
-                                                <div class="d-flex">
-                                                    <a asp-controller="slider" asp-action="edit" asp-route-Id="@item.Id" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                    <a asp-controller="slider" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                </div>
-                                            </td>*@
+                    <div class="d-flex">
+                        <a asp-controller="slider" asp-action="edit" asp-route-Id="@item.Id" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                        <a asp-controller="slider" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                    </div>
+                </td>*@
                                     </tr>
 
-                                    <div class="modal fade" id="exampleModal-@item.Id" tabindex="-1" aria-labelledby="exampleModal-@item.Id-Label" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                    @*<div class="modal fade" id="exampleModal-@item.Id" tabindex="-1" aria-labelledby="exampleModal-@item.Id-Label" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <form method="post" asp-action="RejectOrder" asp-controller="Order">
+                            <input type="hidden" value="@item.Id" />
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModal-@item.Id-Label" style="font-size: 20px;"><i class="fas fa-times-circle pe-3" style="color: red; "></i>Reject comment</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="text-center col-lg-10 m-auto">
+                                    <textarea style="height:10rem;max-height :11rem;" maxlength="100" asp-for="@item.RejectComment" class="form-control input-default " placeholder="Reject Comment"></textarea>
+                                    <span class="text-danger" asp-validation-for="@item.RejectComment"></span>
+                                    <input type="hidden" asp-for="@item.Id" value="@item.Id" />
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fas fa-window-close pe-2"></i>Close</button>
+                                <button type="submit" class="btn btn-success"><i class="fas fa-save pe-2"></i>Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>*@
+
+                                    <div class="modal fade" id="exampleModal-@count" tabindex="-1" aria-labelledby="exampleModal-@count-Label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
-                                                <form method="post" asp-action="RejectOrder" asp-controller="Order">
+                                                <form method="post" asp-action="rejectorder">
 
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModal-@item.Id-Label" style="font-size: 20px;"><i class="fas fa-times-circle pe-3" style="color: red; "></i>Reject comment</h5>
+                                                        <h5 class="modal-title" id="exampleModal-@count-Label">Modal title</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
 
-                                                        <div class="text-center col-lg-10 m-auto">
+                                                        <div class="text-center col-lg-10 mb-3">
+                                                            <label style=" color: #886CC0; font-weight: 700; font-size: 20px; ">Cancel Comment</label>
                                                             <textarea style="height:10rem;max-height :11rem;" maxlength="100" asp-for="@item.RejectComment" class="form-control input-default " placeholder="Reject Comment"></textarea>
                                                             <span class="text-danger" asp-validation-for="@item.RejectComment"></span>
                                                             <input type="hidden" asp-for="@item.Id" value="@item.Id" />
@@ -121,14 +148,14 @@
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fas fa-window-close pe-2"></i>Close</button>
-                                                        <button type="submit" class="btn btn-success"><i class="fas fa-save pe-2"></i>Save</button>
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save</button>
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                 }
+                                }
 
                             </tbody>
                         </table>

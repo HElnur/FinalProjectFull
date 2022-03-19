@@ -51,7 +51,7 @@ namespace Devita.Areas.Manage.Controllers
         [HttpPost]
         public IActionResult RejectOrder(Order order)
         {
-
+            ViewBag.OrderProductId = order.Id;
             var existOrder = _context.Order.FirstOrDefault(x => x.Id == order.Id);
 
             if (existOrder == null)

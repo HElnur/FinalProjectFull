@@ -41,6 +41,7 @@ namespace Devita.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Checkout(Order order)
         {
+            
 
             AppUser user = _userManager.Users.FirstOrDefault(x => x.IsAdmin == false && x.UserName == User.Identity.Name);
             if (user == null)
@@ -55,6 +56,7 @@ namespace Devita.Controllers
             {
                 ModelState.AddModelError("", "There is not any selected product");
             }
+
             if (!ModelState.IsValid)
             {
                 return View("Checkout", new CheckOutViewModel { CheckoutItems = checkoutItems, Order = order });

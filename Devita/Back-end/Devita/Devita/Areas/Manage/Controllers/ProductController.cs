@@ -298,20 +298,28 @@ namespace Devita.Areas.Manage.Controllers
             return View(product);
         }
 
-        //[HttpPost]
-        //public IActionResult Delete(Product product)
-        //{
-        //    Product existProduct = _context.Products.FirstOrDefault(x => x.Id == product.Id);
+        [HttpPost]
+        public IActionResult Delete(Product product)
+        {
+            Product existProduct = _context.Products.Include(x => x.ProductImages).Include(x => x.Category).Include(x => x.ProductComments).FirstOrDefault(x => x.Id == product.Id);
 
-        //    if(existProduct == null)
-        //    {
-        //        return RedirectToAction("index", "error");
-        //    }
+            if (existProduct == null)
+            {
+                return RedirectToAction("index", "error");
+            }
 
-        //    FileManager.Delete(_env.WebRootPath , "uploads/products" , existProduct.)
+            //return Ok(existProduct);
+            FileManager.Delete(_env.WebRootPath, "uploads/products", existProduct.ProductImages.FirstOrDefault(x => x.PosterStatus == true).Image); ;
+            FileManager.Delete(_env.WebRootPath, "uploads/products", existProduct.ProductImages.FirstOrDefault(x => x.PosterStatus == false).Image); ;
+            FileManager.Delete(_env.WebRootPath, "uploads/products", existProduct.ProductImages.FirstOrDefault(x => x.PosterStatus == null).Image); ;
+
+            _context.Products.Remove(existProduct);
+            _context.SaveChanges();
+
+            return RedirectToAction("index");
 
 
-        //}
+        }
 
         private void _setProductImage(ProductImage image, IFormFile file)
         {
@@ -390,9 +398,6 @@ namespace Devita.Areas.Manage.Controllers
             //return View();
         }
 
-        //public IActionResult Delete(int id)
-        //{
-        //    Product product = _context.Products.
-        //}
+       
     }
 }

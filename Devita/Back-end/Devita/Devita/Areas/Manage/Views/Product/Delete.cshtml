@@ -5,244 +5,161 @@
 
 @model Product
 
-<head>
-    <style>
-        label {
-            font-size: 20px;
-            color: #4885ED;
-            font-family: 'Rubik', sans-serif;
-            font-weight: 500;
-        }
-
-        input {
-            border-color: #4885ED !important;
-        }
-
-        select {
-            border-color: #4885ED !important;
-        }
-
-        textarea {
-            border-color: #4885ED !important;
-            border-radius: 1rem;
-        }
-    </style>
-</head>
-
 <div class="content-body">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12 col-xxl-12">
-                <form asp-action="edit" method="post" enctype="multipart/form-data">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Create new product</h4>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"><i class="fas fa-text"></i>Delete product</h4>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h2>Name</h2>
+                            <p>@Model.Name</p>
                         </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="mb-3 col-lg-6">
-                                    <label class="form-label" asp-for="Name">Title</label>
-                                    <input asp-for="Name" class="form-control" placeholder="Name">
-                                </div>
-
-                                <div class="mb-3 col-lg-6">
-                                    <label class="form-label" asp-for="Description">Description</label><br />
-                                    <textarea asp-for="Description" cols="80" rows="2" placeholder="Description"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <select class="form-control" asp-for="CategoryId" asp-items="@new SelectList((List<Category>)ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))">
-                                    </select>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <select class="form-control" asp-for="Colors">
-                                        @foreach (var color in Enum.GetValues(typeof(ColorProduct)))
-                                        {
-                                            <option value="@((int)color)">@color</option>
-                                        }
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="row mt-5">
-                                <div class="mb-3 col-lg-4">
-                                    <label class="form-label" asp-for="CostPrice">Cost price</label>
-                                    <input asp-for="CostPrice" class="form-control" placeholder="Cost price">
-                                </div>
-
-                                <div class="mb-3 col-lg-4">
-                                    <label class="form-label" asp-for="SalePrice">Sale price</label>
-                                    <input asp-for="SalePrice" class="form-control" placeholder="Sale price">
-                                </div>
-
-                                <div class="mb-3 col-lg-4">
-                                    <label class="form-label" asp-for="DiscountPercent">Discount percent</label>
-                                    <input asp-for="DiscountPercent" class="form-control" placeholder="Discount percent">
-                                </div>
-                            </div>
-
-                            <div class="row mt-5">
-                                <div class=" mb-3 col-lg-4">
-                                    <label class="form-label">Stock</label>
-                                    <div class="col-sm-9">
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="StockStatus" type="radio" value="@true" disabled>
-                                            <label asp-for="StockStatus" style="color: #96A0AF" ; class="form-check-label">
-                                                In stock
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="StockStatus" type="radio" value="@false" disabled>
-                                            <label asp-for="StockStatus" style="color: #96A0AF" ; class="form-check-label">
-                                                Out stock
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class=" mb-3 col-lg-4">
-                                    <label class="form-label">Is new</label>
-                                    <div class="col-sm-9">
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsNew" type="radio" value="@true" disabled>
-                                            <label asp-for="IsNew" style="color: #96A0AF" ; class="form-check-label">
-                                                True
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsNew" type="radio" value="@false" disabled>
-                                            <label asp-for="IsNew" style="color: #96A0AF" ; class="form-check-label">
-                                                False
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class=" mb-3 col-lg-4">
-                                    <label class="form-label">Is featured</label>
-                                    <div class="col-sm-9">
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsFeatured" type="radio" value="@true" disabled>
-                                            <label asp-for="IsFeatured" style="color: #96A0AF" ; class="form-check-label">
-                                                True
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsFeatured" type="radio" value="@false" disabled>
-                                            <label asp-for="IsFeatured" style="color: #96A0AF" ; class="form-check-label">
-                                                False
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                            <div class="row">
-                                <div class=" mb-3 col-lg-4">
-                                    <label class="form-label">Top rate</label>
-                                    <div class="col-sm-9">
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsTopRate" type="radio" value="@true" disabled>
-                                            <label asp-for="IsTopRate" style="color: #96A0AF" ; class="form-check-label">
-                                                True
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsTopRate" type="radio" value="@false" disabled>
-                                            <label asp-for="IsTopRate" style="color: #96A0AF" ; class="form-check-label">
-                                                False
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class=" mb-3 col-lg-4">
-                                    <label class="form-label">Is best</label>
-                                    <div class="col-sm-9">
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsBest" type="radio" value="@true" disabled>
-                                            <label asp-for="IsBest" style="color: #96A0AF" ; class="form-check-label">
-                                                True
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsBest" type="radio" value="@false" disabled>
-                                            <label asp-for="IsBest" style="color: #96A0AF" ; class="form-check-label">
-                                                False
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class=" mb-3 col-lg-4">
-                                    <label class="form-label">Top headphone</label>
-                                    <div class="col-sm-9">
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsTopHeadphone" type="radio" value="@true" disabled>
-                                            <label asp-for="IsTopHeadphone" style="color: #96A0AF" ; class="form-check-label">
-                                                True
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" asp-for="IsTopHeadphone" type="radio" value="@false" disabled>
-                                            <label asp-for="IsTopHeadphone" style="color: #96A0AF" ; class="form-check-label">
-                                                False
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class=" mb-3 col-lg-6">
-                                    <label asp-for="PosterFile" style="font-family: 'Rubik', sans-serif; color: #4885ED; font-weight: 400; font-size: 18px;">Poster image</label>
-                                   
-                                    <img src="~/uploads/products/@Model.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image" />
-                                </div>
-
-                                <div class=" mb-3 col-lg-6">
-                                    <label asp-for="HoverPosterFile" style="font-family: 'Rubik', sans-serif; color: #4885ED; font-weight: 400; font-size: 18px;">Hover image</label>
-                                    
-                                    <img src="~/uploads/products/@Model.ProductImages.FirstOrDefault(x => x.PosterStatus==false)?.Image" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="mb-3 col-lg-12">
-                                    <label asp-for="ImageFiles" style="font-family: 'Rubik', sans-serif; color: #4885ED; font-weight: 400; font-size: 18px;">Product images</label>
-                                    
-
-                                    @foreach (var item in Model.ProductImages.Where(x => x.PosterStatus == null))
-                                    {
-                                        <div class="img-box d-flex flex-column justify-content-center" style="width: 20%;">
-                                            <input type="hidden" name="Image" value="@item.Image" />
-                                            <img width="150" height="150" src="~/uploads/products/@item.Image" alt="Alternate Text" />
-                                        </div>
-                                    }
-                                </div>
-                            </div>
+                        <div class="col-lg-6">
+                            <h2>Description</h2>
+                            <p>@Model.Description</p>
                         </div>
+                    </div>
 
-                        <div class="card-footer">
-                            <button type="submit" style="background-color: #4885ED; border: none; box-shadow: none; font-family: 'Rubik' , sans-serif; font-weight: 500; font-size: 20px; padding: 8px 10px; border-radius: 0.5rem; color: #FFFFFF;">Edit</button>
-
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h2>Category</h2>
+                            <p>@Model.Category.Name</p>
                         </div>
 
                     </div>
-                </form>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h2>Cost price</h2>
+                            <p>@Model.CostPrice</p>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>Sale price</h2>
+                            <p>@Model.SalePrice</p>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>Discount percent</h2>
+                            <p>@Model.DiscountPercent%</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-4">
+                            <h2>Stock</h2>
+                            @if (Model.StockStatus)
+                            {
+                                <p>In Stock</p>
+                            }
+
+                            else
+                            {
+                                <p>Out Stock</p>
+                            }
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>New</h2>
+                            @if (Model.IsNew)
+                            {
+                                <p>True</p>
+                            }
+                            else
+                            {
+                                <p>false</p>
+                            }
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>Featured</h2>
+                            @if (Model.IsFeatured)
+                            {
+                                <p>True</p>
+                            }
+
+                            else
+                            {
+                                <p>False</p>
+                            }
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>Top Rate</h2>
+                            @if (Model.IsTopRate)
+                            {
+                                <p>True</p>
+                            }
+
+                            else
+                            {
+                                <p>False</p>
+                            }
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>Best</h2>
+                            @if (Model.IsBest)
+                            {
+                                <p>True</p>
+                            }
+
+                            else
+                            {
+                                <p>False</p>
+                            }
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>Top Headphone</h2>
+                            @if (Model.IsTopHeadphone)
+                            {
+                                <p>True</p>
+                            }
+
+                            else
+                            {
+                                <p>False</p>
+                            }
+                        </div>
+
+                        
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h2>Poster image</h2>
+                            <img src="~/uploads/products/@Model.ProductImages.FirstOrDefault(x => x.PosterStatus==true)?.Image" />
+                        </div>
+                        <div class="col-lg-6">
+                            <h2>Hover image</h2>
+                            <img src="~/uploads/products/@Model.ProductImages.FirstOrDefault(x => x.PosterStatus==false)?.Image" />
+                        </div>
+                    </div>
+
+                    <div class="row d-flex">
+                        <h2>Product images</h2>
+                        @foreach (var item in Model.ProductImages.Where(x => x.PosterStatus==null))
+                        {
+                            <img style="width: 20%;" src="~/uploads/products/@item?.Image" />
+                        }
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <form asp-action="delete" method="post">
+                        <input type="hidden" value="@Model.Id" asp-for="@Model.Id" />
+                        <button type="submit" style="background-color: red; border: none; box-shadow: none; font-family: 'Rubik' , sans-serif; font-weight: 500; font-size: 20px; padding: 8px 10px; border-radius: 0.5rem; color: #FFFFFF;">Delete</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-

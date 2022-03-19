@@ -4,7 +4,10 @@
     <div class="order position-relative">
         <a asp-controller="Order" asp-action="checkout" class="order-text position-relative">
             
-            <i class='bx bxs-shopping-bag-alt'></i>$@Model?.TotalAmount.ToString("0.00") <i class="ps-1 fa-solid fa-angle-down"></i>
+            <i class='bx bxs-shopping-bag-alt'></i>
+           
+            $@Model?.TotalAmount.ToString("0.00") 
+            <i class="ps-1 fa-solid fa-angle-down"></i>
             <span class="order-badge position-absolute py-1 px-2 top-0 translate-middle rounded-circle">
                 <span class="visually count">@(Model?.BasketItems?.Count()??0)</span>
             </span>

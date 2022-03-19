@@ -40,22 +40,23 @@ namespace Devita.Controllers
             return View();
         }
 
+        [Authorize(Roles ="Member")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SignIn(MemberSignInViewModel memberVM)
         {
             
 
-            var UserExists = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == memberVM.UserName);
-            if (UserExists == null)
+            var existUser = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == memberVM.UserName);
+            if (existUser == null)
             {
                 ModelState.AddModelError("", "Username or Password is incorrect!");
                 return View();
             }
-            if (!UserExists.IsAdmin)
+            if (!existUser.IsAdmin)
             {
 
-                var result = await _signInManager.PasswordSignInAsync(UserExists, memberVM.Password, false, false);
+                var result = await _signInManager.PasswordSignInAsync(existUser, memberVM.Password, false, false);
                 if (!result.Succeeded)
                 {
                     ModelState.AddModelError("", "Username or Password is incorrect!");
@@ -72,7 +73,7 @@ namespace Devita.Controllers
                         BasketItem basketItemAdd = new BasketItem
                         {
                             Count = cookieItem.Count,
-                            AppUserId = UserExists.Id,
+                            AppUserId = existUser.Id,
                             ProductId = cookieItem.ProductId
                         };
 

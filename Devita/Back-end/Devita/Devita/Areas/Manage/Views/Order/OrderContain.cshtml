@@ -10,7 +10,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h4 class="card-title">Setting Datatable</h4>
+                    <h4 class="card-title">Order Datatable</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -43,27 +43,30 @@
                             </tbody>
                         </table>
 
-                        <h1 class="text-center mb-4 mt-4" style="font-weight:700">Delivery Status</h1>
-                        <div class="row mb-3">
-                            
-                            <div class="col-lg-6 d-flex justify-content-center">
-                                <a asp-action="StatusProcess" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-light"><i class="fas fa-spinner pe-2"></i>Emalda</a>
+                        @if (Model.DeliveryStatus != OrderDeliveryStatus.Delivered)
+                        {
+                            <h1 class="text-center mb-4 mt-4" style="font-weight:700">Delivery Status</h1>
+                            <div class="row mb-3">
+
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <a asp-action="StatusProcess" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-light"><i class="fas fa-spinner pe-2"></i>Emalda</a>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <a asp-action="StatusDepo" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-info"><i class="fas fa-warehouse pe-2"></i>Depoda</a>
+                                </div>
+
+
+
                             </div>
-                            <div class="col-lg-6 d-flex justify-content-center">
-                                <a asp-action="StatusDepo" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-info"><i class="fas fa-warehouse pe-2"></i>Depoda</a>
+                            <div class="row mb-3">
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <a asp-action="StatusCourier" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fas fa-truck pe-2"></i>Kuryerdə</a>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <a asp-action="StatusDeliver" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-success"><i class="fas fa-box pe-2"></i>Çatdırılmış</a>
+                                </div>
                             </div>
-                            
-                            
-                            
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-lg-6 d-flex justify-content-center">
-                                <a asp-action="StatusCourier" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fas fa-truck pe-2"></i>Kuryerdə</a>
-                            </div>
-                            <div class="col-lg-6 d-flex justify-content-center">
-                                <a asp-action="StatusDeliver" asp-controller="order" asp-route-id="@Model.Id" class="btn btn-success"><i class="fas fa-box pe-2"></i>Çatdırılmış</a>
-                            </div>
-                        </div>
+                        }
 
                         <h1 style="font-weight:700;" class="text-center mb-3 mt-5"> Order Items </h1>
                         <div class="table-responsive">
@@ -93,7 +96,7 @@
                                     }
 
                                 </tbody>
-                               
+
                             </table>
                         </div>
                     </div>

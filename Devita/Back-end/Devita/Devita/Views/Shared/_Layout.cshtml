@@ -1,10 +1,13 @@
 ﻿@using Devita.Services;
+@using Microsoft.AspNetCore.Identity;
 @inject LayoutService service
+@inject UserManager<AppUser> userManager;
 
 @{
     List<Setting> settings = await service.GetSettings();
     BasketViewModel headerBasket = await service.GetBasket();
     List<Category> categories = await service.GetCategories();
+    AppUser user = User.Identity.IsAuthenticated ? userManager.Users.FirstOrDefault(x => x.UserName == User.Identity.Name && !x.IsAdmin) : null;
 }
 
 
@@ -148,7 +151,7 @@
                             </li>
 
                             <li class="register-sign-in">
-                                @if (User.Identity.IsAuthenticated)
+                                @if (User.Identity.IsAuthenticated && user != null && user.IsAdmin==false)
                                 {
                                     <a href="#" class="register-sign-in2"><span class=" d-flex align-items-center"><i class='bx bx-user-circle pe-2  d-flex align-items-center' style="font-size: 20px;"></i>@User.Identity.Name</span></a>
                                 }
@@ -162,7 +165,7 @@
                                     </a>
                                 }
 
-                                @if (User.Identity.IsAuthenticated)
+                                @if (User.Identity.IsAuthenticated && user != null && user.IsAdmin==false)
                                 {
                                     <ul class="">
                                         <li>
@@ -314,9 +317,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="/profile.html">PROFILE</a>
                                     </li>
-                                    <li class="nav-item border-0">
-                                        <a class="nav-link" href="#">BUY THEME</a>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -503,9 +504,7 @@
                                     <a href="#">Shop</a>
                                 </li>
 
-                                <li>
-                                    <a href="#">Blog</a>
-                                </li>
+
 
                                 <li>
                                     <a href="#">Contact 2</a>

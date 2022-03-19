@@ -1,5 +1,6 @@
 ﻿using Devita.Areas.Manage.ViewModels;
 using Devita.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -65,6 +66,7 @@ namespace Devita.Areas.Manage.Controllers
             return RedirectToAction("index", "dashboard");
         }
 
+        [Authorize(Roles = "SuperAdmin,Admin")]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
