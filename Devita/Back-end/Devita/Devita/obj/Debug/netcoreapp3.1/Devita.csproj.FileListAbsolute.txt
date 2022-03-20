@@ -396,3 +396,4 @@ C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Order\Index.cshtml.g.cs
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Order\OrderContain.cshtml.g.cs
 C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Delete.cshtml.g.cs
+C:\Users\husey\Desktop\FinalProjectFull\Devita\Back-end\Devita\Devita\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_RejectOrderPartial.cshtml.g.cs

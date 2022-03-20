@@ -31,16 +31,18 @@ namespace Devita.Controllers
             _emailService = emailService;
         }
 
-        public IActionResult SignIn()
+        public async Task<IActionResult> SignIn()
         {
-            if (User.Identity.IsAuthenticated)
+            AppUser user = User.Identity.IsAuthenticated ? await _userManager.FindByNameAsync(User.Identity.Name) : null;
+
+            if (user != null && user.IsAdmin == false)
             {
-                return RedirectToAction("index","home");
+                return RedirectToAction("index", "home");
             }
             return View();
         }
 
-        [Authorize(Roles ="Member")]
+        //[Authorize(Roles ="Member")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SignIn(MemberSignInViewModel memberVM)

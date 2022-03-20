@@ -44,9 +44,9 @@
                     <button type="submit" class="btn btn-primary">Order</button>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <input type="hidden" asp-for="AppUserId" value="@user.Id"/>
-                        <input type="hidden" asp-for="FullName" value="@user.FullName"/>
-                        <input type="hidden" asp-for="Email" value="@user.Email"/>
+                        <input type="hidden" asp-for="AppUserId" value="@user?.Id"/>
+                        <input type="hidden" asp-for="FullName" value="@user?.FullName"/>
+                        <input type="hidden" asp-for="Email" value="@user?.Email"/>
 
                     }
 

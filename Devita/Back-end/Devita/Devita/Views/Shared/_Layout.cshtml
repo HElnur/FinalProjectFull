@@ -151,7 +151,7 @@
                             </li>
 
                             <li class="register-sign-in">
-                                @if (User.Identity.IsAuthenticated && user != null && user.IsAdmin==false)
+                                @if (user != null && user.IsAdmin==false)
                                 {
                                     <a href="#" class="register-sign-in2"><span class=" d-flex align-items-center"><i class='bx bx-user-circle pe-2  d-flex align-items-center' style="font-size: 20px;"></i>@User.Identity.Name</span></a>
                                 }
@@ -165,7 +165,7 @@
                                     </a>
                                 }
 
-                                @if (User.Identity.IsAuthenticated && user != null && user.IsAdmin==false)
+                                @if (user != null && user?.IsAdmin==false)
                                 {
                                     <ul class="">
                                         <li>

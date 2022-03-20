@@ -73,18 +73,18 @@ namespace Devita.Areas.Manage.Controllers
             return RedirectToAction("signin", "account");
         }
 
-        public async Task<IActionResult> CreateAdmin()
-        {
-            AppUser appUser = new AppUser
-            {
-                UserName = "SuperAdmin",
-                FullName = "Super Admin"
-            };
+        //public async Task<IActionResult> CreateAdmin()
+        //{
+        //    AppUser appUser = new AppUser
+        //    {
+        //        UserName = "SuperAdmin",
+        //        FullName = "Super Admin"
+        //    };
 
-            var result = await _userManager.CreateAsync(appUser, "Admin12345");
+        //    var result = await _userManager.CreateAsync(appUser, "Admin12345");
 
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
 
 
     }

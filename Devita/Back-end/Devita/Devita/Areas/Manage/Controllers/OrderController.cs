@@ -48,26 +48,19 @@ namespace Devita.Areas.Manage.Controllers
             return RedirectToAction("index");
         }
 
-        [HttpPost]
-        public IActionResult RejectOrder(Order order)
+        //[HttpPost]
+        public IActionResult RejectOrder(int id)
         {
-            ViewBag.OrderProductId = order.Id;
-            var existOrder = _context.Order.FirstOrDefault(x => x.Id == order.Id);
+
+            var existOrder = _context.Order.FirstOrDefault(x => x.Id == id);
 
             if (existOrder == null)
             {
                 return RedirectToAction("index", "error");
             }
 
-            if (order.RejectComment == null)
-            {
-                ModelState.AddModelError("rejectcomment", "Reject comment is required!");
-                TempData["error"] = "Reject Comment is required!";
-                return RedirectToAction("index");
-            }
 
             existOrder.Status = Enum.OrderStatus.Rejected;
-            existOrder.RejectComment = order.RejectComment;
             _context.SaveChanges();
             return RedirectToAction("index");
         }
